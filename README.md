@@ -1,2 +1,2 @@
-# alvyn279v2.github.io
+# alvyn279v2
 Let's refactor https://alvynle.me
