@@ -47,7 +47,8 @@
     "react/jsx-curly-brace-presence": ["error", { "props": "always", "children": "ignore"}],
     "react/jsx-props-no-spreading": "error",
     "react/static-property-placement": "off",
-    "react/prefer-stateless-function": "off"
+    "react/prefer-stateless-function": "off",
+    "jsx-a11y/anchor-is-valid": "off"
   },
   "plugins": ["react"],
   "settings": {

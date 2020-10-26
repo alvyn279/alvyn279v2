@@ -4,6 +4,16 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './utils/serviceWorker';
 
+import './App.min.css';
+import 'animate.css/animate.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'font-awesome/css/font-awesome.min.css';
+import 'lightbox2/dist/css/lightbox.min.css';
+
+import 'jquery';
+import 'bootstrap';
+import './libs/easing.min';
+
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
