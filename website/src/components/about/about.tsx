@@ -36,20 +36,19 @@ class About extends React.Component<AboutProps> {
                       </div>
                     </div>
                     <div className={'skill-mf'}>
-                      {/* <p className="title-s">Skill</p> */}
                       {skills.map(skill => {
                         return (
                           <React.Fragment key={skill.id}>
                             <span>{skill.content}</span>
                             {' '}
                             <span className={'pull-right'}>
-                              {skill.porcentage}
+                              {skill.percentage}
                             </span>
                             <div className={'progress'}>
                               <div
                                 className={'progress-bar'}
                                 role={'progressbar'}
-                                style={{ width: skill.porcentage }}
+                                style={{ width: skill.percentage }}
                                 aria-valuenow={skill.value}
                                 aria-valuemin={0}
                                 aria-valuemax={100}
