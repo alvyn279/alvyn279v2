@@ -3,18 +3,38 @@ import $ from 'jquery';
 
 import logo1 from '../../img/male1.png';
 import logo2 from '../../img/male.png';
+import ScrollLink from '../scroll-link/scroll-link';
 
 interface NavbarState {
   logo: any
 }
 
+interface NavbarItemProps {
+  to: string,
+  title: string,
+  isDefault?: boolean,
+}
+
+const NavbarItem = (props: NavbarItemProps) => {
+  const { to, title, isDefault } = props;
+
+  return (
+    <li className={'nav-item'}>
+      <ScrollLink
+        to={to}
+        title={(
+          <a
+            className={`nav-link js-scroll ${isDefault ? 'active' : ''}`}
+          >
+            {title}
+          </a>
+        )}
+      />
+    </li>
+  );
+};
+
 class Navbar extends React.Component<any, NavbarState> {
-  hash = '';
-
-  hostname = '';
-
-  pathname = '';
-
   constructor(props) {
     super(props);
 
@@ -61,34 +81,6 @@ class Navbar extends React.Component<any, NavbarState> {
         this.setState({ logo: logo1 });
       }
     });
-
-    $('a.js-scroll[href*="#"]:not([href="#"])').on('click', () => {
-      if (
-        window.location.pathname.replace(/^\//, '')
-          === this.pathname.replace(/^\//, '')
-        && window.location.hostname === this.hostname
-      ) {
-        let target = $(this.hash);
-        target = target.length
-          ? target
-          : $(`[name=${this.hash.slice(1)}]`);
-        if (target.length) {
-          $('html, body').animate(
-            {
-              scrollTop: target.offset().top - navHeight + 5,
-            },
-            1000,
-            'easeInExpo',
-          );
-          return false;
-        }
-      }
-      return false;
-    });
-
-    $('.js-scroll').on('click', () => {
-      $('.navbar-collapse').collapse('hide');
-    });
   }
 
   render() {
@@ -127,38 +119,23 @@ class Navbar extends React.Component<any, NavbarState> {
             id={'navbarDefault'}
           >
             <ul className={'navbar-nav'}>
-              <li className={'nav-item'}>
-                <a
-                  className={'nav-link js-scroll active'}
-                  href={'#home'}
-                >
-                  Home
-                </a>
-              </li>
-              <li className={'nav-item'}>
-                <a
-                  className={'nav-link js-scroll'}
-                  href={'#about'}
-                >
-                  About
-                </a>
-              </li>
-              <li className={'nav-item'}>
-                <a
-                  className={'nav-link js-scroll'}
-                  href={'#work'}
-                >
-                  Work
-                </a>
-              </li>
-              <li className={'nav-item'}>
-                <a
-                  className={'nav-link js-scroll'}
-                  href={'#contact'}
-                >
-                  Contact
-                </a>
-              </li>
+              <NavbarItem
+                to={'home'}
+                title={'Home'}
+                isDefault
+              />
+              <NavbarItem
+                to={'about'}
+                title={'About'}
+              />
+              <NavbarItem
+                to={'work'}
+                title={'Work'}
+              />
+              <NavbarItem
+                to={'contact'}
+                title={'Contact'}
+              />
             </ul>
           </div>
         </div>

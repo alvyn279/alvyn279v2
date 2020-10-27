@@ -7,19 +7,34 @@ import Portfolio from './components/portfolio/portfolio';
 import Contact from './components/contact/contact';
 import BackToTop from './components/back-top/back-top';
 import Preloader from './components/preloader/preloader';
+import Section from './components/section/section';
 import { ABOUT_INFO } from './data';
 
 const App = () => {
   return (
     <div className={'App'}>
       <Navbar />
-      <Intro />
-      <About
-        about={ABOUT_INFO.about}
-        skills={ABOUT_INFO.skills}
+      <Section
+        id={'home'}
+        content={<Intro />}
       />
-      <Portfolio />
-      <Contact />
+      <Section
+        id={'about'}
+        content={(
+          <About
+            about={ABOUT_INFO.about}
+            skills={ABOUT_INFO.skills}
+          />
+        )}
+      />
+      <Section
+        id={'work'}
+        content={<Portfolio />}
+      />
+      <Section
+        id={'contact'}
+        content={<Contact />}
+      />
       <BackToTop />
       <Preloader />
     </div>
