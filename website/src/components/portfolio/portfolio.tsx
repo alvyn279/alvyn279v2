@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './porfolio.scss';
 import stock from '../../img/image1.jpg';
 
 class Portfolio extends React.Component {
@@ -24,7 +24,7 @@ class Portfolio extends React.Component {
           </div>
           <div className={'row'}>
             <div className={'col-md-4'}>
-              <div className={'work-box'}>
+              <div className={'work-box portfolio-item-card'}>
                 <a
                   href={stock}
                   data-lightbox={'gallery-vmarine'}
@@ -64,7 +64,7 @@ class Portfolio extends React.Component {
               </div>
             </div>
             <div className={'col-md-4'}>
-              <div className={'work-box'}>
+              <div className={'portfolio-item-card work-box'}>
                 <a
                   href={stock}
                   data-lightbox={'gallery-aguadeluz'}

@@ -1,4 +1,5 @@
 import React from 'react';
+import './contact.scss';
 import imageOverlay from '../../img/earth.jpg';
 
 class Contact extends React.Component {
@@ -15,7 +16,7 @@ class Contact extends React.Component {
               <div className={'contact-mf'}>
                 <div
                   id={'contact'}
-                  className={'box-shadow-full'}
+                  className={'box-shadow-full big-card'}
                 >
                   <div className={'row'}>
                     <div className={'col-md-6'}>

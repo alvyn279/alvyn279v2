@@ -1,4 +1,5 @@
 import React from 'react';
+import './about.scss';
 
 interface AboutProps {
   skills: Array<any>,
@@ -15,8 +16,14 @@ class About extends React.Component<AboutProps> {
       >
         <div className={'container'}>
           <div className={'row'}>
-            <div className={'col-sm-12'}>
-              <div className={'box-shadow-full'}>
+            <div
+              className={'col-sm-12'}
+              id={'big-card-container'}
+            >
+              <div
+                className={'box-shadow-full big-card'}
+                id={'big-card'}
+              >
                 <div className={'row'}>
                   <div className={'col-md-6'}>
                     <div className={'row'}>
@@ -44,9 +51,9 @@ class About extends React.Component<AboutProps> {
                             <span className={'pull-right'}>
                               {skill.percentage}
                             </span>
-                            <div className={'progress'}>
+                            <div className={'progress progress-rounded'}>
                               <div
-                                className={'progress-bar'}
+                                className={'progress-bar progress-rounded'}
                                 role={'progressbar'}
                                 style={{ width: skill.percentage }}
                                 aria-valuenow={skill.value}
