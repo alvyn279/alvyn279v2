@@ -1,30 +1,41 @@
 import React from 'react';
 import $ from 'jquery';
-import '../../libs/easing.min';
+import './back-top.scss';
 
-class BackToTop extends React.Component {
+interface BackTopState {
+  show: boolean
+}
+
+class BackToTop extends React.Component<any, BackTopState> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      show: false,
+    };
+  }
+
   componentDidMount() {
     $('.back-to-top').click(() => {
       $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
       return false;
     });
     window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 100) {
-        document.querySelector('.back-to-top')!.classList.remove('fadeOut');
-        (document.querySelector('.back-to-top') as HTMLElement)!.style.display = 'block';
-        document.querySelector('.back-to-top')!.classList.add('fadeIn');
-      } else {
-        document.querySelector('.back-to-top')!.classList.remove('fadeIn');
-        document.querySelector('.back-to-top')!.classList.add('fadeOut');
-      }
+      this.setState({ show: window.pageYOffset >= 100 });
     });
   }
 
   render() {
+    const { show } = this.state;
+
     return (
       <a
         href={'#'}
-        className={'back-to-top animated'}
+        className={`back-to-top ${show ? 'fadeInBackTopButton' : 'fadeOutBackTopButton'}`}
+        style={{
+          display: 'block',
+          width: '44px',
+          height: '44px',
+        }}
       >
         <i className={'fa fa-chevron-up'} />
       </a>
