@@ -1,6 +1,7 @@
 import React from 'react';
 import './stars.scss';
 import Typed from 'react-typed';
+import ScrollLink from '../scroll-link/scroll-link';
 
 class Intro extends React.Component {
   render() {
@@ -34,13 +35,17 @@ class Intro extends React.Component {
                 </strong>
               </p>
               <p className={'pt-3'}>
-                <a
-                  className={'btn btn-primary btn js-scroll px-4'}
-                  href={'#work'}
-                  role={'button'}
-                >
-                  View My Work
-                </a>
+                <ScrollLink
+                  to={'work'}
+                  title={(
+                    <a
+                      className={'btn btn-primary btn js-scroll px-4'}
+                      role={'button'}
+                    >
+                      View My Work
+                    </a>
+                  )}
+                />
               </p>
             </div>
           </div>
