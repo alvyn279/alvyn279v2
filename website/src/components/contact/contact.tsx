@@ -1,4 +1,8 @@
 import React from 'react';
+import LogoGithub from 'react-ionicons/lib/LogoGithub';
+import LogoLinkedin from 'react-ionicons/lib/LogoLinkedin';
+import SocialLink from '../social-link/social-link';
+
 import './contact.scss';
 import imageOverlay from '../../img/earth.jpg';
 
@@ -113,46 +117,38 @@ class Contact extends React.Component {
                           <br />
                           Simply fill the from and send me an email.
                         </p>
-                        {/* <!-- <ul class="list-ico">
-                                <li><span class="ion-ios-location"></span> 329 WASHINGTON ST BOSTON, MA 02108</li>
-                                <li><span class="ion-ios-telephone"></span> (617) 557-0089</li>
-                                <li><span class="ion-email"></span> contact@example.com</li>
-                                </ul> --> */}
                       </div>
                       <div className={'socials'}>
                         <ul>
                           <li>
-                            <a
-                              href={''}
-                              target={'_blank'}
-                              rel={'noopener noreferrer'}
-                            >
-                              <span className={'ico-circle'}>
-                                <i className={'ion-social-codepen'} />
-                              </span>
-                            </a>
+                            <SocialLink
+                              link={''}
+                              size={70}
+                              logo={(
+                                <LogoGithub
+                                  fontSize={'60px'}
+                                  color={'#0078ff'}
+                                  style={{
+                                    height: '100%',
+                                  }}
+                                />
+                              )}
+                            />
                           </li>
                           <li>
-                            <a
-                              href={''}
-                              target={'_blank'}
-                              rel={'noopener noreferrer'}
-                            >
-                              <span className={'ico-circle'}>
-                                <i className={'ion-social-github'} />
-                              </span>
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href={''}
-                              target={'_blank'}
-                              rel={'noopener noreferrer'}
-                            >
-                              <span className={'ico-circle'}>
-                                <i className={'ion-social-linkedin'} />
-                              </span>
-                            </a>
+                            <SocialLink
+                              link={''}
+                              size={70}
+                              logo={(
+                                <LogoLinkedin
+                                  fontSize={'60px'}
+                                  color={'#0078ff'}
+                                  style={{
+                                    height: '100%',
+                                  }}
+                                />
+                              )}
+                            />
                           </li>
                         </ul>
                       </div>
