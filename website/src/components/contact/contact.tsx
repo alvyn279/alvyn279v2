@@ -49,7 +49,7 @@ class Contact extends React.Component<ContactProps> {
                             logo={(
                               <LogoGithub
                                 fontSize={'60px'}
-                                color={'#0078ff'}
+                                color={'#28384c'}
                                 style={{
                                   height: '100%',
                                 }}
@@ -64,7 +64,7 @@ class Contact extends React.Component<ContactProps> {
                             logo={(
                               <LogoLinkedin
                                 fontSize={'60px'}
-                                color={'#0078ff'}
+                                color={'#28384c'}
                                 style={{
                                   height: '100%',
                                 }}
