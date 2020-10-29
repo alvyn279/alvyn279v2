@@ -8,7 +8,7 @@ import Contact from './components/contact/contact';
 import BackToTop from './components/back-top/back-top';
 import Preloader from './components/preloader/preloader';
 import Section from './components/section/section';
-import { ABOUT_INFO } from './data';
+import { ABOUT_INFO, SOCIAL_INFO } from './data';
 
 const App = () => {
   return (
@@ -33,7 +33,12 @@ const App = () => {
       />
       <Section
         id={'contact'}
-        content={<Contact />}
+        content={(
+          <Contact
+            github={SOCIAL_INFO.githubLink}
+            linkedin={SOCIAL_INFO.linkedinLink}
+          />
+        )}
       />
       <BackToTop />
       <Preloader />

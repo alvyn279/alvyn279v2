@@ -6,8 +6,15 @@ import SocialLink from '../social-link/social-link';
 import './contact.scss';
 import imageOverlay from '../../img/earth.jpg';
 
-class Contact extends React.Component {
+interface ContactProps {
+  github: string,
+  linkedin: string,
+}
+
+class Contact extends React.Component<ContactProps> {
   render() {
+    const { github, linkedin } = this.props;
+
     return (
       <section
         className={'paralax-mf footer-paralax bg-image sect-mt4 route'}
@@ -122,7 +129,7 @@ class Contact extends React.Component {
                         <ul>
                           <li>
                             <SocialLink
-                              link={''}
+                              link={github}
                               size={70}
                               logo={(
                                 <LogoGithub
@@ -137,7 +144,7 @@ class Contact extends React.Component {
                           </li>
                           <li>
                             <SocialLink
-                              link={''}
+                              link={linkedin}
                               size={70}
                               logo={(
                                 <LogoLinkedin

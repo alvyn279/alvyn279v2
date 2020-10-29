@@ -58,3 +58,8 @@ export const ABOUT_INFO = {
     },
   ],
 };
+
+export const SOCIAL_INFO = {
+  githubLink: 'https://github.com/alvyn279',
+  linkedinLink: 'https://www.linkedin.com/in/alvyn-duy-khoi-le',
+};
