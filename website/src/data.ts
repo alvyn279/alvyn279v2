@@ -1,10 +1,34 @@
-export const ABOUT_INFO = {
+import { TimelineProps } from './components/timeline/timeline';
+import { AboutProps } from './components/about/about';
+
+const TIMELINE_INFO: TimelineProps = {
+  events: [
+    {
+      dateString: 'Fall 2016',
+      title: 'Student',
+      institution: 'Concordia University',
+      description: [
+        'Start of Software Engineering (BEng) degree at Concordia University. Enrolled in co-op.',
+      ],
+      dateStringBackgroundColor: '#800000',
+      dateStringColor: '#FFD700',
+    },
+  ],
+};
+
+export const ABOUT_INFO: AboutProps = {
   skills: [
     {
-      id: 'HTML5_skill', content: 'HTML5', percentage: '80%', value: '80',
+      id: 'HTML5_skill',
+      content: 'HTML5',
+      percentage: '80%',
+      value: '80',
     },
     {
-      id: 'CSS3_skill', content: 'CSS3', percentage: '75%', value: '75',
+      id: 'CSS3_skill',
+      content: 'CSS3',
+      percentage: '75%',
+      value: '75',
     },
     {
       id: 'JavaScript_skill',
@@ -57,6 +81,7 @@ export const ABOUT_INFO = {
         'lol',
     },
   ],
+  timeline: TIMELINE_INFO,
 };
 
 export const SOCIAL_INFO = {

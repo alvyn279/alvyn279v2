@@ -1,19 +1,24 @@
 import React from 'react';
 import './about.scss';
+import Timeline, { TimelineProps } from '../timeline/timeline';
 
-interface AboutProps {
+export interface AboutProps {
   skills: Array<any>,
-  about: Array<any>
+  about: Array<any>,
+  timeline: TimelineProps
 }
 
 class About extends React.Component<AboutProps> {
   render() {
-    const { about, skills } = this.props;
+    const { about, skills, timeline } = this.props;
     return (
       <section
         id={'about'}
         className={'about-mf sect-pt4 route'}
       >
+        <Timeline
+          events={timeline.events}
+        />
         <div className={'container'}>
           <div className={'row'}>
             <div

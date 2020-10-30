@@ -24,6 +24,7 @@ const App = () => {
           <About
             about={ABOUT_INFO.about}
             skills={ABOUT_INFO.skills}
+            timeline={ABOUT_INFO.timeline}
           />
         )}
       />

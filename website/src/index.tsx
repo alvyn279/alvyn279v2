@@ -14,6 +14,9 @@ import 'jquery';
 import 'bootstrap';
 import './libs/easing.min';
 
+export const MAIN_THEME_COLOR = '#0078ff';
+export const FONT_COLOR_DEFAULT = '#000000';
+
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
