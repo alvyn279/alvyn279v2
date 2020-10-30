@@ -2,9 +2,21 @@ import React from 'react';
 import './about.scss';
 import Timeline, { TimelineProps } from '../timeline/timeline';
 
+export interface Skill {
+  id: string,
+  content: string,
+  percentage: string,
+  value: number,
+}
+
+export interface AboutContentParagraph {
+  id: string,
+  content: string
+}
+
 export interface AboutProps {
-  skills: Array<any>,
-  about: Array<any>,
+  skills: Array<Skill>,
+  about: Array<AboutContentParagraph>,
   timeline: TimelineProps
 }
 

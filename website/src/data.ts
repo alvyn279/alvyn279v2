@@ -22,63 +22,63 @@ export const ABOUT_INFO: AboutProps = {
       id: 'HTML5_skill',
       content: 'HTML5',
       percentage: '80%',
-      value: '80',
+      value: 80,
     },
     {
       id: 'CSS3_skill',
       content: 'CSS3',
       percentage: '75%',
-      value: '75',
+      value: 75,
     },
     {
       id: 'JavaScript_skill',
       content: 'JavaScript',
       percentage: '90%',
-      value: '90',
+      value: 90,
     },
     {
-      id: 'PHP_skill', content: 'PHP', percentage: '70%', value: '70',
+      id: 'PHP_skill',
+      content: 'PHP',
+      percentage: '70%',
+      value: 70,
     },
     {
       id: 'ReactJS_skill',
       content: 'ReactJS',
       percentage: '80%',
-      value: '80',
+      value: 80,
     },
     {
       id: 'Python_skill',
       content: 'Python',
       percentage: '75%',
-      value: '75',
+      value: 75,
     },
     {
       id: 'VanillaJS_skill',
       content: 'VanillaJS',
       percentage: '85%',
-      value: '85',
+      value: 85,
     },
     {
       id: 'Wordpress_skill',
       content: 'Wordpress',
       percentage: '80%',
-      value: '80',
+      value: 80,
     },
   ],
   about: [
     {
       id: 'first-p-about',
-      content:
-        'lol1',
+      content: 'lol1',
     },
     {
       id: 'second-p-about',
-      content:
-        'lol2',
+      content: 'lol2',
     },
     {
       id: 'third-p-about',
-      content:
-        'lol',
+      content: 'lol',
     },
   ],
   timeline: TIMELINE_INFO,
