@@ -4,12 +4,15 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './utils/serviceWorker';
 
+// CSS
 import './App.min.css';
 import 'animate.css/animate.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import 'lightbox2/dist/css/lightbox.min.css';
+import 'antd/dist/antd.css';
 
+// JS
 import 'jquery';
 import 'bootstrap';
 import './libs/easing.min';

@@ -3,7 +3,11 @@ import {
   Timeline as VerticalTimeline,
   TimelineItem as VerticalTimelineItem,
 } from 'vertical-timeline-component-for-react';
+import { Tag } from 'antd';
+import { Tag as ITag } from '../../utils/tags';
 import { FONT_COLOR_DEFAULT, MAIN_THEME_COLOR } from '../../index';
+
+import './timeline.scss';
 
 export interface TimelineProps {
   events: Array<TimelineItem>
@@ -17,6 +21,7 @@ interface TimelineItem {
   subtitle?: string,
   institution: string,
   description?: Array<string>,
+  tags?: Array<ITag>
 }
 
 const timelineItemContainerStyle = {
@@ -49,7 +54,19 @@ const Timeline = (props: TimelineProps) => {
                 >
                   <h4>{`${timelineItem.title}, ${timelineItem.institution}`}</h4>
                   {timelineItem.subtitle ? <h5>{timelineItem.subtitle}</h5> : <span />}
-                  <br />
+                  {timelineItem.tags
+                    ? (
+                      <p className={'tag'}>
+                        {timelineItem.tags.map((tag: ITag) => (
+                          <Tag
+                            className={'roundify'}
+                            color={tag.color}
+                          >
+                            {tag.content}
+                          </Tag>
+                        ))}
+                      </p>
+                    ) : <span />}
                   {timelineItem.description ? (
                     timelineItem.description.map((paragraph: string) => (
                       <p>{paragraph}</p>

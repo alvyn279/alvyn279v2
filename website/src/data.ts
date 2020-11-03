@@ -1,5 +1,6 @@
 import { TimelineProps } from './components/timeline/timeline';
 import { AboutProps } from './components/about/about';
+import { TAGS } from './utils/tags';
 
 const TIMELINE_INFO: TimelineProps = {
   events: [
@@ -13,6 +14,7 @@ const TIMELINE_INFO: TimelineProps = {
       ],
       dateStringBackgroundColor: '#800000',
       dateStringColor: '#FFD700',
+      tags: [TAGS.SCHOOL],
     }, {
       dateString: 'Jan 2018 - Aug 2018',
       title: 'Software Engineering Intern',
@@ -23,6 +25,7 @@ const TIMELINE_INFO: TimelineProps = {
       ],
       dateStringBackgroundColor: '#002561',
       dateStringColor: '#FFFFFF',
+      tags: [TAGS.INTERNSHIP, TAGS.BACKTOBACK],
     }, {
       dateString: 'May 2019 - Jan 2020',
       title: 'Full-Stack Developer Intern',
@@ -32,6 +35,7 @@ const TIMELINE_INFO: TimelineProps = {
       ],
       dateStringBackgroundColor: '#f31c4d',
       dateStringColor: '#FFFFFF',
+      tags: [TAGS.INTERNSHIP],
     }, {
       dateString: 'May 2020',
       title: 'Student',
@@ -41,6 +45,7 @@ const TIMELINE_INFO: TimelineProps = {
       ],
       dateStringBackgroundColor: '#800000',
       dateStringColor: '#FFD700',
+      tags: [TAGS.SCHOOL],
     }, {
       dateString: 'Jun 2020 - Sep 2020',
       title: 'SDE Intern',
@@ -50,12 +55,14 @@ const TIMELINE_INFO: TimelineProps = {
       ],
       dateStringBackgroundColor: '#232F3E',
       dateStringColor: '#FF9900',
+      tags: [TAGS.INTERNSHIP],
     }, {
       dateString: 'Feb 2021',
       title: 'SDE',
       institution: 'Amazon Web Services (AWS)',
       dateStringBackgroundColor: '#232F3E',
       dateStringColor: '#FF9900',
+      tags: [TAGS.FULLTIME],
     },
   ],
 };
