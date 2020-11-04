@@ -18,6 +18,7 @@ import 'bootstrap';
 import './libs/easing.min';
 
 export const MAIN_THEME_COLOR = '#0078ff';
+export const LIGHTER_MAIN_THEME_COLOR = '#7d97bd';
 export const FONT_COLOR_DEFAULT = '#000000';
 
 ReactDOM.render(<App />, document.getElementById('root'));
