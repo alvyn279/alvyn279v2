@@ -1,6 +1,7 @@
 import React from 'react';
 import './about.scss';
 import Timeline, { TimelineProps } from '../timeline/timeline';
+import SectionHeader from '../section-header/section-header';
 
 export interface Skill {
   id: string,
@@ -28,10 +29,14 @@ class About extends React.Component<AboutProps> {
         id={'about'}
         className={'about-mf sect-pt4 route'}
       >
-        <Timeline
-          events={timeline.events}
-        />
         <div className={'container'}>
+          <SectionHeader header={'Timeline'} />
+          <Timeline
+            events={timeline.events}
+          />
+        </div>
+        <div className={'container'}>
+          <SectionHeader header={'Skills'} />
           <div className={'row'}>
             <div
               className={'col-sm-12'}

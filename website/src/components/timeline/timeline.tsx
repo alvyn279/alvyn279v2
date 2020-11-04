@@ -35,50 +35,40 @@ const Timeline = (props: TimelineProps) => {
   const { events } = props;
 
   return (
-    <div className={'container'}>
-      <div className={'row'}>
-        <div className={'col-sm-12'}>
-          <div className={'title-box text-center'}>
-            <h3 className={'title-a'}>Timeline</h3>
-            <div className={'line-mf'} />
-            <VerticalTimeline lineColor={'#ddd'}>
-              {events.map((timelineItem: TimelineItem, index: number) => (
-                <VerticalTimelineItem
-                  key={index.toString()}
-                  dateText={timelineItem.dateString}
-                  bodyContainerStyle={timelineItemContainerStyle}
-                  dateInnerStyle={{
-                    background: timelineItem.dateStringBackgroundColor || MAIN_THEME_COLOR,
-                    color: timelineItem.dateStringColor || FONT_COLOR_DEFAULT,
-                  }}
-                >
-                  <h4>{`${timelineItem.title}, ${timelineItem.institution}`}</h4>
-                  {timelineItem.subtitle ? <h5>{timelineItem.subtitle}</h5> : <span />}
-                  {timelineItem.tags
-                    ? (
-                      <p className={'tag'}>
-                        {timelineItem.tags.map((tag: ITag) => (
-                          <Tag
-                            className={'roundify'}
-                            color={tag.color}
-                          >
-                            {tag.content}
-                          </Tag>
-                        ))}
-                      </p>
-                    ) : <span />}
-                  {timelineItem.description ? (
-                    timelineItem.description.map((paragraph: string) => (
-                      <p>{paragraph}</p>
-                    ))
-                  ) : (<span />)}
-                </VerticalTimelineItem>
-              ))}
-            </VerticalTimeline>
-          </div>
-        </div>
-      </div>
-    </div>
+    <VerticalTimeline lineColor={'#ddd'}>
+      {events.map((timelineItem: TimelineItem, index: number) => (
+        <VerticalTimelineItem
+          key={index.toString()}
+          dateText={timelineItem.dateString}
+          bodyContainerStyle={timelineItemContainerStyle}
+          dateInnerStyle={{
+            background: timelineItem.dateStringBackgroundColor || MAIN_THEME_COLOR,
+            color: timelineItem.dateStringColor || FONT_COLOR_DEFAULT,
+          }}
+        >
+          <h4>{`${timelineItem.title}, ${timelineItem.institution}`}</h4>
+          {timelineItem.subtitle ? <h5>{timelineItem.subtitle}</h5> : <span />}
+          {timelineItem.tags
+            ? (
+              <p className={'tag'}>
+                {timelineItem.tags.map((tag: ITag) => (
+                  <Tag
+                    className={'roundify'}
+                    color={tag.color}
+                  >
+                    {tag.content}
+                  </Tag>
+                ))}
+              </p>
+            ) : <span />}
+          {timelineItem.description ? (
+            timelineItem.description.map((paragraph: string) => (
+              <p>{paragraph}</p>
+            ))
+          ) : (<span />)}
+        </VerticalTimelineItem>
+      ))}
+    </VerticalTimeline>
   );
 };
 
