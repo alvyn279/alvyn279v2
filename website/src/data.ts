@@ -70,44 +70,37 @@ const TIMELINE_INFO: TimelineProps = {
 export const ABOUT_INFO: AboutProps = {
   skills: [
     {
-      id: 'HTML5_skill',
-      content: 'HTML5',
-      value: 80,
-    },
-    {
-      id: 'CSS3_skill',
-      content: 'CSS3',
-      value: 75,
-    },
-    {
-      id: 'JavaScript_skill',
-      content: 'JavaScript',
+      id: 'react',
+      content: 'React',
       value: 90,
-    },
-    {
-      id: 'PHP_skill',
-      content: 'PHP',
-      value: 70,
-    },
-    {
-      id: 'ReactJS_skill',
-      content: 'ReactJS',
-      value: 80,
-    },
-    {
-      id: 'Python_skill',
+    }, {
+      id: 'ts',
+      content: 'TypeScript',
+      value: 90,
+    }, {
+      id: 'java',
+      content: 'Java',
+      value: 85,
+    }, {
+      id: 'python',
       content: 'Python',
       value: 75,
-    },
-    {
-      id: 'VanillaJS_skill',
-      content: 'VanillaJS',
-      value: 85,
-    },
-    {
-      id: 'Wordpress_skill',
-      content: 'Wordpress',
+    }, {
+      id: 'git',
+      content: 'Git',
+      value: 95,
+    }, {
+      id: 'rest',
+      content: 'REST',
       value: 80,
+    }, {
+      id: 'aws',
+      content: 'AWS',
+      value: 60,
+    }, {
+      id: 'mongo',
+      content: 'MongoDB',
+      value: 70,
     },
   ],
   about: [
