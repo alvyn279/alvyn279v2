@@ -22,7 +22,7 @@ const App = () => {
         id={'about'}
         content={(
           <About
-            otherContent={ABOUT_INFO.otherContent}
+            libraries={ABOUT_INFO.libraries}
             skills={ABOUT_INFO.skills}
             timeline={ABOUT_INFO.timeline}
           />

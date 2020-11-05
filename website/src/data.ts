@@ -103,18 +103,35 @@ export const ABOUT_INFO: AboutProps = {
       value: 70,
     },
   ],
-  otherContent: [
+  libraries: [
     {
-      id: 'first-p-about',
-      content: 'lol1',
-    },
-    {
-      id: 'second-p-about',
-      content: 'lol2',
-    },
-    {
-      id: 'third-p-about',
-      content: 'lol',
+      type: 'Unit & BDD testing',
+      content: [
+        'Jest',
+        'Enzyme',
+        'JUnit',
+        'Groovy',
+        'Spock',
+      ],
+    }, {
+      type: 'Java Patterns (DI, Builder, & utilities)',
+      content: [
+        'Lombok',
+        'Dagger',
+      ],
+    }, {
+      type: 'React',
+      content: [
+        'Redux',
+        'react-router',
+        'Webpack',
+        'React Native',
+      ],
+    }, {
+      type: 'Cloud',
+      content: [
+        'aws-cdk',
+      ],
     },
   ],
   timeline: TIMELINE_INFO,

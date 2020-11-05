@@ -10,20 +10,20 @@ export interface Skill {
   value: number,
 }
 
-export interface OtherParagraph {
-  id: string,
-  content: string
+export interface LibraryGroup {
+  type: string,
+  content: Array<string>
 }
 
 export interface AboutProps {
   skills: Array<Skill>,
-  otherContent: Array<OtherParagraph>,
+  libraries: Array<LibraryGroup>,
   timeline: TimelineProps
 }
 
 class About extends React.Component<AboutProps> {
   render() {
-    const { otherContent, skills, timeline } = this.props;
+    const { libraries, skills, timeline } = this.props;
     return (
       <section
         id={'about'}
@@ -39,7 +39,7 @@ class About extends React.Component<AboutProps> {
           <SectionHeader header={'Skills'} />
           <SkillsCard
             skills={skills}
-            otherSkills={otherContent}
+            libraries={libraries}
           />
         </div>
       </section>

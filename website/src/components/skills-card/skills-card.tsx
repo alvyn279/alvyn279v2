@@ -1,17 +1,19 @@
 import React from 'react';
-import { Progress } from 'antd';
-import { OtherParagraph, Skill } from '../about/about';
+import { Progress, Tree } from 'antd';
+import { LibraryGroup, Skill } from '../about/about';
 import { LIGHTER_MAIN_THEME_COLOR, MAIN_THEME_COLOR } from '../../index';
 
 import './skills-card.scss';
 
 export interface SkillsCardProps {
   skills: Array<Skill>
-  otherSkills: Array<OtherParagraph>
+  libraries: Array<LibraryGroup>
 }
 
+const { DirectoryTree } = Tree;
+
 const SkillsCard = (props: SkillsCardProps) => {
-  const { otherSkills, skills } = props;
+  const { libraries, skills } = props;
 
   const renderSkills = () => {
     return (
@@ -35,22 +37,31 @@ const SkillsCard = (props: SkillsCardProps) => {
     );
   };
 
-  const renderOtherSkillsText = () => {
+  const renderLibrariesUsed = () => {
+    // single level antd tree
+    const treeData = libraries.map((libraryGroup: LibraryGroup, libGroupIndex: number) => {
+      return {
+        title: libraryGroup.type,
+        key: libGroupIndex.toString(),
+        children: libraryGroup.content.map((library: string, index: number) => ({
+          title: library,
+          key: `${libGroupIndex}-${index}`,
+          isLeaf: true,
+        })),
+      };
+    });
+
     return (
       <div className={'about-me pt-4 pt-md-0'}>
         <div className={'title-box-2'}>
           <p className={'title-left'}>Some other libraries I&apos;ve used...</p>
         </div>
-        {otherSkills.map(content => {
-          return (
-            <p
-              className={'lead'}
-              key={content.id}
-            >
-              {content.content}
-            </p>
-          );
-        })}
+        <div className={'libs'}>
+          <DirectoryTree
+            selectable={false}
+            treeData={treeData}
+          />
+        </div>
       </div>
     );
   };
@@ -67,26 +78,10 @@ const SkillsCard = (props: SkillsCardProps) => {
         >
           <div className={'row'}>
             <div className={'col-md-6'}>
-              <div className={'row'}>
-                <div
-                  className={'col-sm-6 col-md-5'}
-                  style={{ margin: '0 auto' }}
-                >
-                  <div
-                    className={'about-img'}
-                    style={{ textAlign: 'center' }}
-                  >
-                    <img
-                      className={'img-fluid rounded b-shadow-a'}
-                      alt={''}
-                    />
-                  </div>
-                </div>
-              </div>
               {renderSkills()}
             </div>
             <div className={'col-md-6'}>
-              {renderOtherSkillsText()}
+              {renderLibrariesUsed()}
             </div>
           </div>
         </div>
