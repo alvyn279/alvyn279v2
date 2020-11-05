@@ -33,6 +33,8 @@ class Contact extends React.Component<ContactProps> {
                     <div className={'title-box-2 pt-4 pt-md-0'}>
                       <h5 className={'title-left'}>Get in Touch</h5>
                     </div>
+                  </div>
+                  <div className={'row'}>
                     <div className={'more-info'}>
                       <p className={'lead'}>
                           Whether you want to get in touch, talk about a project

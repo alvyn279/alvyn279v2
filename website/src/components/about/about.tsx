@@ -10,20 +10,20 @@ export interface Skill {
   value: number,
 }
 
-export interface AboutContentParagraph {
+export interface OtherParagraph {
   id: string,
   content: string
 }
 
 export interface AboutProps {
   skills: Array<Skill>,
-  about: Array<AboutContentParagraph>,
+  otherContent: Array<OtherParagraph>,
   timeline: TimelineProps
 }
 
 class About extends React.Component<AboutProps> {
   render() {
-    const { about, skills, timeline } = this.props;
+    const { otherContent, skills, timeline } = this.props;
     return (
       <section
         id={'about'}
@@ -39,7 +39,7 @@ class About extends React.Component<AboutProps> {
           <SectionHeader header={'Skills'} />
           <SkillsCard
             skills={skills}
-            about={about}
+            otherSkills={otherContent}
           />
         </div>
       </section>

@@ -1,17 +1,17 @@
 import React from 'react';
 import { Progress } from 'antd';
-import { AboutContentParagraph, Skill } from '../about/about';
+import { OtherParagraph, Skill } from '../about/about';
 import { LIGHTER_MAIN_THEME_COLOR, MAIN_THEME_COLOR } from '../../index';
 
 import './skills-card.scss';
 
 export interface SkillsCardProps {
   skills: Array<Skill>
-  about: Array<AboutContentParagraph>
+  otherSkills: Array<OtherParagraph>
 }
 
 const SkillsCard = (props: SkillsCardProps) => {
-  const { about, skills } = props;
+  const { otherSkills, skills } = props;
 
   const renderSkills = () => {
     return (
@@ -35,13 +35,13 @@ const SkillsCard = (props: SkillsCardProps) => {
     );
   };
 
-  const renderAboutText = () => {
+  const renderOtherSkillsText = () => {
     return (
       <div className={'about-me pt-4 pt-md-0'}>
         <div className={'title-box-2'}>
-          <h5 className={'title-left'}>About Me</h5>
+          <p className={'title-left'}>Some other libraries I&apos;ve used...</p>
         </div>
-        {about.map(content => {
+        {otherSkills.map(content => {
           return (
             <p
               className={'lead'}
@@ -86,7 +86,7 @@ const SkillsCard = (props: SkillsCardProps) => {
               {renderSkills()}
             </div>
             <div className={'col-md-6'}>
-              {renderAboutText()}
+              {renderOtherSkillsText()}
             </div>
           </div>
         </div>

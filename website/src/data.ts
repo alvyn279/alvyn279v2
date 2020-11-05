@@ -103,7 +103,7 @@ export const ABOUT_INFO: AboutProps = {
       value: 70,
     },
   ],
-  about: [
+  otherContent: [
     {
       id: 'first-p-about',
       content: 'lol1',
