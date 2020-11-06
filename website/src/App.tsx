@@ -30,7 +30,11 @@ const App = () => {
       />
       <Section
         id={'work'}
-        content={<Portfolio />}
+        content={(
+          <Portfolio
+            githubLink={SOCIAL_INFO.githubLink}
+          />
+        )}
       />
       <Section
         id={'contact'}
