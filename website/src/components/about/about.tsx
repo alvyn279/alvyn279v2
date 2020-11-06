@@ -30,13 +30,19 @@ class About extends React.Component<AboutProps> {
         className={'about-mf sect-pt4 route'}
       >
         <div className={'container'}>
-          <SectionHeader header={'Timeline'} />
+          <SectionHeader
+            header={'Timeline'}
+            subtitle={'Academic and professional career experiences'}
+          />
           <Timeline
             events={timeline.events}
           />
         </div>
         <div className={'container'}>
-          <SectionHeader header={'Skills'} />
+          <SectionHeader
+            header={'Skills'}
+            subtitle={'Programming languages and technologies'}
+          />
           <SkillsCard
             skills={skills}
             libraries={libraries}

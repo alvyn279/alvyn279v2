@@ -1,6 +1,7 @@
 import React from 'react';
 import './porfolio.scss';
 import stock from '../../img/image1.jpg';
+import SectionHeader from '../section-header/section-header';
 
 class Portfolio extends React.Component {
   render() {
@@ -10,18 +11,10 @@ class Portfolio extends React.Component {
         className={'portfolio-mf sect-pt4 route'}
       >
         <div className={'container'}>
-          <div className={'row'}>
-            <div className={'col-sm-12'}>
-              <div className={'title-box text-center'}>
-                <h3 className={'title-a'}>Portfolio</h3>
-                <p className={'subtitle-a'}>
-                  Incididunt nostrud id aute culpa excepteur pariatur consequat
-                  elit culpa nulla enim anim incididunt.
-                </p>
-                <div className={'line-mf'} />
-              </div>
-            </div>
-          </div>
+          <SectionHeader
+            header={'Projects'}
+            subtitle={'Personal and open-source project contributions'}
+          />
           <div className={'row'}>
             <div className={'col-md-4'}>
               <div className={'work-box portfolio-item-card'}>

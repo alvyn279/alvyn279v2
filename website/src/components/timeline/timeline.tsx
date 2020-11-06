@@ -47,25 +47,24 @@ const Timeline = (props: TimelineProps) => {
           }}
         >
           <h4>{`${timelineItem.title}, ${timelineItem.institution}`}</h4>
-          {timelineItem.subtitle ? <h5>{timelineItem.subtitle}</h5> : <span />}
-          {timelineItem.tags
-            ? (
-              <p className={'tag'}>
-                {timelineItem.tags.map((tag: ITag) => (
-                  <Tag
-                    className={'roundify'}
-                    color={tag.color}
-                  >
-                    {tag.content}
-                  </Tag>
-                ))}
-              </p>
-            ) : <span />}
-          {timelineItem.description ? (
+          {timelineItem.subtitle && <h5>{timelineItem.subtitle}</h5>}
+          {timelineItem.tags && (
+            <p className={'tag'}>
+              {timelineItem.tags.map((tag: ITag) => (
+                <Tag
+                  className={'roundify'}
+                  color={tag.color}
+                >
+                  {tag.content}
+                </Tag>
+              ))}
+            </p>
+          )}
+          {timelineItem.description && (
             timelineItem.description.map((paragraph: string) => (
               <p>{paragraph}</p>
             ))
-          ) : (<span />)}
+          )}
         </VerticalTimelineItem>
       ))}
     </VerticalTimeline>
