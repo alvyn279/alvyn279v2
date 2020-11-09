@@ -5,7 +5,7 @@ import ScrollLink from '../scroll-link/scroll-link';
 
 const HIGHLIGHT_TITLES = [
   'Software Engineer',
-  'Sports Enthusiast',
+  'Sports Fan',
   'Stargazer',
 ];
 
