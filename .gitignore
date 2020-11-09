@@ -1,2 +1,12 @@
 .idea
 node_modules/
+
+.DS_Store
+
+build
+bin
+
+# CDK specific
+cdk/lib/
+cdk/**/*.d.ts
+cdk/**/*.js
