@@ -23,6 +23,7 @@
     "typescript": "~3.7.2"
   },
   "dependencies": {
+    "@aws-cdk/aws-route53": "1.60.0",
     "@aws-cdk/aws-s3": "1.60.0",
     "@aws-cdk/aws-s3-deployment": "1.60.0",
     "@aws-cdk/core": "1.60.0",
