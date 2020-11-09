@@ -1,6 +1,7 @@
 import React from 'react';
 import LogoGithub from 'react-ionicons/lib/LogoGithub';
 import LogoLinkedin from 'react-ionicons/lib/LogoLinkedin';
+import IosMail from 'react-ionicons/lib/IosMail';
 import SocialLink from '../social-link/social-link';
 
 import './contact.scss';
@@ -9,11 +10,20 @@ import imageOverlay from '../../img/earth.jpg';
 interface ContactProps {
   github: string,
   linkedin: string,
+  email: string
 }
+
+const LOGO_PROPS = {
+  fontSize: '35px',
+  color: '#28384c',
+  style: {
+    height: '100%',
+  },
+};
 
 class Contact extends React.Component<ContactProps> {
   render() {
-    const { github, linkedin } = this.props;
+    const { github, linkedin, email } = this.props;
 
     return (
       <section
@@ -31,50 +41,53 @@ class Contact extends React.Component<ContactProps> {
                 >
                   <div className={'row'}>
                     <div className={'title-box-2 pt-4 pt-md-0'}>
-                      <h5 className={'title-left'}>Get in Touch</h5>
+                      <h5 className={'title-left'}>Contact Me</h5>
                     </div>
                   </div>
                   <div className={'row'}>
-                    <div className={'more-info'}>
-                      <p className={'lead'}>
-                          Whether you want to get in touch, talk about a project
-                          collaboration, or just say hi, I&apos;d love to hear from
-                          you.
-                      </p>
-                    </div>
-                    <div className={'socials'}>
-                      <ul>
-                        <li>
-                          <SocialLink
-                            link={github}
-                            size={70}
-                            logo={(
-                              <LogoGithub
-                                fontSize={'60px'}
-                                color={'#28384c'}
-                                style={{
-                                  height: '100%',
-                                }}
-                              />
-                            )}
-                          />
-                        </li>
-                        <li>
-                          <SocialLink
-                            link={linkedin}
-                            size={70}
-                            logo={(
-                              <LogoLinkedin
-                                fontSize={'60px'}
-                                color={'#28384c'}
-                                style={{
-                                  height: '100%',
-                                }}
-                              />
-                            )}
-                          />
-                        </li>
-                      </ul>
+                    <div className={'contact-content'}>
+                      <div className={'more-info'}>
+                        <p className={'lead'}>
+                          Feel free to reach out to me for any inquiry.
+                        </p>
+                      </div>
+                      <div className={'socials'}>
+                        <ul>
+                          <li>
+                            <SocialLink
+                              link={github}
+                              size={45}
+                              logo={(
+                                <LogoGithub
+                                  {...LOGO_PROPS}
+                                />
+                              )}
+                            />
+                          </li>
+                          <li>
+                            <SocialLink
+                              link={linkedin}
+                              size={45}
+                              logo={(
+                                <LogoLinkedin
+                                  {...LOGO_PROPS}
+                                />
+                              )}
+                            />
+                          </li>
+                          <li>
+                            <SocialLink
+                              link={`mailto:${email}`}
+                              size={45}
+                              logo={(
+                                <IosMail
+                                  {...LOGO_PROPS}
+                                />
+                              )}
+                            />
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>

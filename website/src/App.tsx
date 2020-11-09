@@ -42,6 +42,7 @@ const App = () => {
           <Contact
             github={SOCIAL_INFO.githubLink}
             linkedin={SOCIAL_INFO.linkedinLink}
+            email={SOCIAL_INFO.email}
           />
         )}
       />

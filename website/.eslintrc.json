@@ -45,7 +45,7 @@
     "react/jsx-indent" : ["error", 2],
     "react/jsx-indent-props" : ["error", 2],
     "react/jsx-curly-brace-presence": ["error", { "props": "always", "children": "ignore"}],
-    "react/jsx-props-no-spreading": "error",
+    "react/jsx-props-no-spreading": "off",
     "react/static-property-placement": "off",
     "react/prefer-stateless-function": "off",
     "jsx-a11y/anchor-is-valid": "off",
