@@ -125,12 +125,23 @@ export const ABOUT_INFO: AboutProps = {
         'Redux',
         'react-router',
         'Webpack',
-        'React Native',
+        'axios',
       ],
     }, {
       type: 'Cloud',
       content: [
         'aws-cdk',
+      ],
+    }, {
+      type: 'Python',
+      content: [
+        'Django',
+      ],
+    }, {
+      type: 'Mobile',
+      content: [
+        'React Native',
+        'Android',
       ],
     },
   ],
