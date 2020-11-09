@@ -1,9 +1,11 @@
 import React from 'react';
 import $ from 'jquery';
 
-import logo1 from '../../img/male1.png';
-import logo2 from '../../img/male.png';
+import portraitOutline from '../../img/pt_otl.png';
+import portrait from '../../img/pt.png';
 import ScrollLink from '../scroll-link/scroll-link';
+
+import './navbar.scss';
 
 interface NavbarState {
   logo: any
@@ -39,7 +41,7 @@ class Navbar extends React.Component<any, NavbarState> {
     super(props);
 
     this.state = {
-      logo: logo1,
+      logo: portrait,
     };
   }
 
@@ -70,7 +72,7 @@ class Navbar extends React.Component<any, NavbarState> {
         document
           .querySelector('.navbar-expand-md')!
           .classList.remove('navbar-trans');
-        this.setState({ logo: logo2 });
+        this.setState({ logo: portraitOutline });
       } else {
         document
           .querySelector('.navbar-expand-md')!
@@ -78,7 +80,7 @@ class Navbar extends React.Component<any, NavbarState> {
         document
           .querySelector('.navbar-expand-md')!
           .classList.remove('navbar-reduce');
-        this.setState({ logo: logo1 });
+        this.setState({ logo: portrait });
       }
     });
   }
@@ -91,16 +93,18 @@ class Navbar extends React.Component<any, NavbarState> {
         id={'mainNav'}
       >
         <div className={'container'}>
-          <a
+          <div
             className={'navbar-brand js-scroll'}
-            href={'#page-top'}
           >
             <img
+              className={'fadedImg'}
               src={logo}
               alt={'logo'}
-              style={{ maxWidth: '100px' }}
+              style={{
+                maxWidth: '150px',
+              }}
             />
-          </a>
+          </div>
           <button
             className={'navbar-toggler collapsed'}
             type={'button'}
