@@ -1,0 +1,50 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "extends": ["airbnb"],
+  "rules": {
+    "semi": "error",
+    "indent": ["error", 2],
+    "camelcase": "error",
+    "max-len": ["error", {"code": 120}],
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "no-template-curly-in-string": "error",
+    "no-multi-spaces": "error",
+    "no-console": "off",
+    "one-var": "off",
+    "one-var-declaration-per-line": "off",
+    "arrow-parens": ["error", "as-needed"],
+    "arrow-body-style": "off",
+    "array-callback-return": "off",
+    "import/first": "off",
+    "import/prefer-default-export": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never"
+      }
+    ],
+    "no-new": "off",
+    "no-unused-vars": ["error", { "vars": "all", "args": "none"}],
+    "no-unused-expressions": "off",
+    "no-loop-func": "off",
+    "no-plusplus": "off",
+    "radix": ["error", "as-needed"]
+  },
+  "plugins": [],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts"]
+      }
+    }
+  },
+  "ignorePatterns": []
+}
