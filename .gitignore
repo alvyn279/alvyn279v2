@@ -6,7 +6,6 @@ node_modules/
 build
 
 # CDK specific
-cdk/lib/
 cdk/**/*.d.ts
 cdk/**/*.js
 cdk.out
