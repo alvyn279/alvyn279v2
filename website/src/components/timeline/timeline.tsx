@@ -50,8 +50,9 @@ const Timeline = (props: TimelineProps) => {
           {timelineItem.subtitle && <h5>{timelineItem.subtitle}</h5>}
           {timelineItem.tags && (
             <p className={'tag'}>
-              {timelineItem.tags.map((tag: ITag) => (
+              {timelineItem.tags.map((tag: ITag, tagIndex: number) => (
                 <Tag
+                  key={`tag-${index}-${tagIndex}`}
                   className={'roundify'}
                   color={tag.color}
                 >
@@ -61,8 +62,12 @@ const Timeline = (props: TimelineProps) => {
             </p>
           )}
           {timelineItem.description && (
-            timelineItem.description.map((paragraph: string) => (
-              <p>{paragraph}</p>
+            timelineItem.description.map((paragraph: string, paragraphIndex: number) => (
+              <p
+                key={`item-desc-${index}-${paragraphIndex}`}
+              >
+                {paragraph}
+              </p>
             ))
           )}
         </VerticalTimelineItem>

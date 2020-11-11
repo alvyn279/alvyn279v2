@@ -40,12 +40,12 @@ class Intro extends React.Component {
                 <ScrollLink
                   to={'work'}
                   title={(
-                    <a
+                    <span
                       className={'btn btn-primary btn js-scroll px-4'}
                       role={'button'}
                     >
                       View My Work
-                    </a>
+                    </span>
                   )}
                 />
               </p>

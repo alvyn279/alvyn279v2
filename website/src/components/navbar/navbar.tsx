@@ -25,11 +25,11 @@ const NavbarItem = (props: NavbarItemProps) => {
       <ScrollLink
         to={to}
         title={(
-          <a
+          <span
             className={`nav-link js-scroll ${isDefault ? 'active' : ''}`}
           >
             {title}
-          </a>
+          </span>
         )}
       />
     </li>
