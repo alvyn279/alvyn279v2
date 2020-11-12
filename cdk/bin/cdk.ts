@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import cdk = require('@aws-cdk/core');
-import { CdkStack } from '../lib/cdk-stack';
+import { PersonalWebsiteStack } from '../lib/personal-website-stack';
 import { AWS_ACCOUNT } from '../constants';
 import { ScaffoldStack } from '../lib/scaffold-stack';
 
@@ -11,6 +11,6 @@ const env: cdk.Environment = {
   region: 'us-east-1',
 };
 
-new CdkStack(app, 'S3ReactPersonalWebsite', { env });
+new PersonalWebsiteStack(app, 'S3ReactPersonalWebsite', { env });
 
 new ScaffoldStack(app, 'ScaffoldStack', { env });

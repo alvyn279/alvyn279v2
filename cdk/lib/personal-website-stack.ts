@@ -2,7 +2,11 @@ import { SPADeploy } from 'cdk-spa-deploy';
 import cdk = require('@aws-cdk/core');
 import { CUSTOM_DOMAIN_NAME } from '../constants';
 
-export class CdkStack extends cdk.Stack {
+/**
+ * CloudFormation stack of AWS resources that will distribute the
+ * React/S3 website.
+ */
+export class PersonalWebsiteStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
