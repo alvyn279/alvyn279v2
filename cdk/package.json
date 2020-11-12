@@ -6,19 +6,19 @@
   },
   "scripts": {
     "buildwebsite": "cd ../website && npm i && npm run build && cd ../cdk",
-    "build": "tsc",
+    "build": "tsc && cdk synth",
     "watch": "tsc -w",
     "test": "jest",
     "cdk": "cdk",
     "deploy": "cdk deploy '*' --require-approval 'never'"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "1.60.0",
+    "@aws-cdk/assert": "1.72.0",
     "@types/jest": "^24.9.1",
     "@types/node": "10.17.5",
     "@typescript-eslint/eslint-plugin": "^2.13.0",
     "@typescript-eslint/parser": "^2.13.0",
-    "aws-cdk": "1.60.0",
+    "aws-cdk": "1.72.0",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.22.1",
@@ -30,11 +30,12 @@
     "typescript": "~3.7.2"
   },
   "dependencies": {
-    "@aws-cdk/aws-route53": "1.60.0",
-    "@aws-cdk/aws-s3": "1.60.0",
-    "@aws-cdk/aws-s3-deployment": "1.60.0",
-    "@aws-cdk/core": "1.60.0",
-    "cdk-spa-deploy": "1.60.0",
+    "@aws-cdk/aws-iam": "1.72.0",
+    "@aws-cdk/aws-route53": "1.72.0",
+    "@aws-cdk/aws-s3": "1.72.0",
+    "@aws-cdk/aws-s3-deployment": "1.72.0",
+    "@aws-cdk/core": "1.72.0",
+    "cdk-spa-deploy": "1.72.0",
     "source-map-support": "^0.5.16"
   }
 }

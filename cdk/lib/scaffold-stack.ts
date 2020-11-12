@@ -2,6 +2,7 @@
 import cdk = require('@aws-cdk/core');
 import route53 = require('@aws-cdk/aws-route53');
 import { PersonalWebsiteStack } from './personal-website-stack'; // eslint-disable-line no-unused-vars
+
 import { CUSTOM_DOMAIN_NAME } from '../constants';
 
 /**
@@ -9,7 +10,7 @@ import { CUSTOM_DOMAIN_NAME } from '../constants';
  * before deploying the {@link PersonalWebsiteStack}.
  */
 export class ScaffoldStack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
     // Create HostedZone with custom domain name

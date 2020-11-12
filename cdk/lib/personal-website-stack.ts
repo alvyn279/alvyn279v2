@@ -1,5 +1,6 @@
-import { SPADeploy } from 'cdk-spa-deploy';
 import cdk = require('@aws-cdk/core');
+import { SPADeploy } from 'cdk-spa-deploy';
+
 import { CUSTOM_DOMAIN_NAME } from '../constants';
 
 /**
@@ -7,7 +8,7 @@ import { CUSTOM_DOMAIN_NAME } from '../constants';
  * React/S3 website.
  */
 export class PersonalWebsiteStack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
     // Create deploy construct
