@@ -1,4 +1,5 @@
 import cdk = require('@aws-cdk/core');
+import iam = require('@aws-cdk/aws-iam');
 import { SPADeploy } from 'cdk-spa-deploy';
 
 import { CUSTOM_DOMAIN_NAME } from '../constants';
@@ -20,5 +21,33 @@ export class PersonalWebsiteStack extends cdk.Stack {
         indexDoc: 'index.html',
         websiteFolder: '../website/build',
       });
+
+    const githubActionsDeployer: iam.IUser = new iam.User(this, 'GitHubActionsDeployer', {
+      userName: 'GitHubActionsDeployer',
+    });
+
+    const deployPolicyStatement: iam.PolicyStatement = new iam.PolicyStatement({
+      actions: [
+        's3:GetObject*',
+        's3:GetBucket*',
+        's3:List*',
+        's3:DeleteObject*',
+        's3:PutObject*',
+        's3:Abort*',
+        'cloudfront:GetInvalidation',
+        'cloudfront:CreateInvalidation',
+        'acm:RequestCertificate',
+        'acm:DescribeCertificate',
+        'acm:DeleteCertificate',
+        'route53:GetChange',
+        'route53:changeResourceRecordSets',
+        'sts:AssumeRole',
+      ],
+      effect: iam.Effect.ALLOW,
+      resources: ['*'],
+    });
+
+    // Allow GitHub Actions to deploy website to bucket
+    githubActionsDeployer.addToPrincipalPolicy(deployPolicyStatement);
   }
 }
