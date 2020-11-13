@@ -33,6 +33,10 @@ npm run cdk deploy S3ReactPersonalWebsite
 Automatic deployments to S3 bucket when a push is made to `main`.
 
 ### Pre-reqs
+
+You must first deploy the CloudFormation stacks (scaffold and website in that order) once with an admin AWS user. 
+I use environment variables and AWS profiles for credentials resolution.
+
 The CDK application will generate an IAM User with least-privileged access to the necessary AWS deployment resources.
 
 1. You can generate access/private key pair for that user on AWS console
