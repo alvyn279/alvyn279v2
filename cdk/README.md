@@ -28,6 +28,22 @@ npm run cdk deploy ScaffoldStack
 npm run cdk deploy S3ReactPersonalWebsite
 ```
 
+## GitHub Actions Deployment
+
+Automatic deployments to S3 bucket when a push is made to `main`.
+
+### Pre-reqs
+The CDK application will generate an IAM User with least-privileged access to the necessary AWS deployment resources.
+
+1. You can generate access/private key pair for that user on AWS console
+2. Add these as `secrets` in the GitHub repo settings under
+
+        `AWS_ACCESS_KEY_ID`
+        `AWS_SECRET_ACCESS_KEY`
+
+### Change CDK constants
+
+Change constants used by the CDK app (AWS account ID, domain name) in `cdk/constants.ts`.
 
 ## Useful commands
 
