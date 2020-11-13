@@ -28,8 +28,7 @@ class BackToTop extends React.Component<any, BackTopState> {
     const { show } = this.state;
 
     return (
-      <a
-        href={'#'}
+      <span
         className={`back-to-top ${show ? 'fadeInBackTopButton' : 'fadeOutBackTopButton'}`}
         style={{
           display: 'block',
@@ -38,7 +37,7 @@ class BackToTop extends React.Component<any, BackTopState> {
         }}
       >
         <i className={'fa fa-chevron-up'} />
-      </a>
+      </span>
     );
   }
 }
