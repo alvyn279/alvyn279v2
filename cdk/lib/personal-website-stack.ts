@@ -42,6 +42,7 @@ export class PersonalWebsiteStack extends cdk.Stack {
         'route53:GetChange',
         'route53:changeResourceRecordSets',
         'sts:AssumeRole',
+        'cloudformation:*',
       ],
       effect: iam.Effect.ALLOW,
       resources: ['*'],
