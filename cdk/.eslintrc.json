@@ -7,7 +7,7 @@
       "experimentalObjectRestSpread": true
     }
   },
-  "extends": ["airbnb"],
+  "extends": ["airbnb", "plugin:jest/recommended"],
   "rules": {
     "semi": "error",
     "indent": ["error", 2],
@@ -38,7 +38,7 @@
     "no-plusplus": "off",
     "radix": ["error", "as-needed"]
   },
-  "plugins": [],
+  "plugins": ["jest"],
   "settings": {
     "import/resolver": {
       "node": {

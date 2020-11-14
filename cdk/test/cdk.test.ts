@@ -1,13 +1,19 @@
 import { expect as expectCDK, haveResource, haveResourceLike } from '@aws-cdk/assert';
 import * as cdk from '@aws-cdk/core';
 import { PersonalWebsiteStack } from '../lib/personal-website-stack';
+import { AWS_ACCOUNT } from '../constants';
 
-test('Basic Site Setup', () => {
+test('Personal Website Stack setup', () => {
   // GIVEN
   const app = new cdk.App();
 
   // WHEN
-  const stack = new PersonalWebsiteStack(app, 'CdkArticleStack');
+  const stack = new PersonalWebsiteStack(app, 'CdkArticleStack', {
+    env: {
+      account: AWS_ACCOUNT,
+      region: 'us-east-1',
+    },
+  });
 
   // THEN
   expectCDK(stack).to(haveResource('AWS::S3::Bucket', {
@@ -22,9 +28,12 @@ test('Basic Site Setup', () => {
     PolicyDocument: {
       Statement: [
         {
-          Action: 's3:GetObject',
+          Action: [
+            's3:GetObject*',
+            's3:GetBucket*',
+            's3:List*',
+          ],
           Effect: 'Allow',
-          Principal: '*',
         }],
     },
   }));
