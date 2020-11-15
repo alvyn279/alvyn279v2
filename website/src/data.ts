@@ -136,6 +136,7 @@ export const ABOUT_INFO: AboutProps = {
       type: 'Python',
       content: [
         'Django',
+        'Flask',
       ],
     }, {
       type: 'Mobile',
