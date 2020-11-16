@@ -123,6 +123,7 @@ export const ABOUT_INFO: AboutProps = {
       type: 'React',
       content: [
         'Redux',
+        'redux-thunk',
         'react-router',
         'Webpack',
         'axios',
