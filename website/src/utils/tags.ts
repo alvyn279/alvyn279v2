@@ -1,10 +1,15 @@
 export interface Tag {
   color: string,
-  content: string
+  content: string,
+}
+
+export interface TagItem {
+  tag: Tag,
+  tooltipComment?: string,
 }
 
 // Tags are based on antd Tag standard
-export const TAGS = {
+export const TAGS: Record<string, Tag> = {
   SCHOOL: {
     color: '#993002',
     content: 'school',
@@ -12,6 +17,10 @@ export const TAGS = {
   INTERNSHIP: {
     color: '#196184',
     content: 'internship',
+  },
+  PARTTIME: {
+    color: '#baac2b',
+    content: 'part-time',
   },
   FULLTIME: {
     color: '#4b7f31',

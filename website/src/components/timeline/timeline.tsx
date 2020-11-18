@@ -3,8 +3,8 @@ import {
   Timeline as VerticalTimeline,
   TimelineItem as VerticalTimelineItem,
 } from 'vertical-timeline-component-for-react';
-import { Tag } from 'antd';
-import { Tag as ITag } from '../../utils/tags';
+import { Tag, Tooltip } from 'antd';
+import { TagItem } from '../../utils/tags';
 import { FONT_COLOR_DEFAULT, MAIN_THEME_COLOR } from '../../index';
 
 import './timeline.scss';
@@ -21,7 +21,7 @@ interface TimelineItem {
   subtitle?: string,
   institution: string,
   description?: Array<string>,
-  tags?: Array<ITag>
+  tagItems?: Array<TagItem>
 }
 
 const timelineItemContainerStyle = {
@@ -33,6 +33,35 @@ const timelineItemContainerStyle = {
 
 const Timeline = (props: TimelineProps) => {
   const { events } = props;
+
+  const renderTags = (tagItems: Array<TagItem>, timelineItemIndex) => {
+    return tagItems.map((tagItem: TagItem, tagIndex: number) => {
+      const { tag, tooltipComment }: TagItem = tagItem;
+      const tagId = `${timelineItemIndex}-${tagIndex}`;
+      const extraTagProps = tooltipComment ? {
+        style: {
+          cursor: 'pointer',
+        },
+      } : {};
+
+      return (
+        <Tooltip
+          title={tooltipComment}
+          key={`tag-tooltip-${tagId}`}
+          color={tag.color}
+        >
+          <Tag
+            key={`tag-${tagId}`}
+            className={'roundify'}
+            color={tag.color}
+            {...extraTagProps}
+          >
+            {tag.content}
+          </Tag>
+        </Tooltip>
+      );
+    });
+  };
 
   return (
     <VerticalTimeline lineColor={'#ddd'}>
@@ -48,17 +77,9 @@ const Timeline = (props: TimelineProps) => {
         >
           <h4>{`${timelineItem.title}, ${timelineItem.institution}`}</h4>
           {timelineItem.subtitle && <h5>{timelineItem.subtitle}</h5>}
-          {timelineItem.tags && (
+          {timelineItem.tagItems && (
             <p className={'tag'}>
-              {timelineItem.tags.map((tag: ITag, tagIndex: number) => (
-                <Tag
-                  key={`tag-${index}-${tagIndex}`}
-                  className={'roundify'}
-                  color={tag.color}
-                >
-                  {tag.content}
-                </Tag>
-              ))}
+              {renderTags(timelineItem.tagItems, index)}
             </p>
           )}
           {timelineItem.description && (
