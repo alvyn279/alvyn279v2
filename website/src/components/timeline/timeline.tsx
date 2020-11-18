@@ -46,9 +46,12 @@ const Timeline = (props: TimelineProps) => {
 
       return (
         <Tooltip
-          title={tooltipComment}
           key={`tag-tooltip-${tagId}`}
+          title={tooltipComment}
           color={tag.color}
+          overlayInnerStyle={{
+            borderRadius: '8px',
+          }}
         >
           <Tag
             key={`tag-${tagId}`}
