@@ -166,6 +166,13 @@ export const ABOUT_INFO: AboutProps = {
         'React Native',
         'Android',
       ],
+    }, {
+      type: 'Linter',
+      content: [
+        'eslint',
+        'airbnb/javascript',
+        'pylint',
+      ],
     },
   ],
   timeline: TIMELINE_INFO,
