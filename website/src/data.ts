@@ -14,9 +14,11 @@ const TIMELINE_INFO: TimelineProps = {
       ],
       dateStringBackgroundColor: '#800000',
       dateStringColor: '#FFD700',
-      tagItems: [{
-        tag: TAGS.SCHOOL,
-      }],
+      tagItems: [
+        {
+          tag: TAGS.SCHOOL,
+        },
+      ],
     }, {
       dateString: 'Jan 2018 - Aug 2018',
       title: 'Software Engineering Intern',
@@ -27,12 +29,14 @@ const TIMELINE_INFO: TimelineProps = {
       ],
       dateStringBackgroundColor: '#002561',
       dateStringColor: '#FFFFFF',
-      tagItems: [{
-        tag: TAGS.INTERNSHIP,
-      }, {
-        tag: TAGS.BACKTOBACK,
-        tooltipComment: '4-month ✕ 2 with different teams',
-      }],
+      tagItems: [
+        {
+          tag: TAGS.INTERNSHIP,
+        }, {
+          tag: TAGS.BACKTOBACK,
+          tooltipComment: '4-month ✕ 2 with different teams',
+        },
+      ],
     }, {
       dateString: 'May 2019 - Jan 2020',
       title: 'Full-Stack Developer Intern',
@@ -42,13 +46,15 @@ const TIMELINE_INFO: TimelineProps = {
       ],
       dateStringBackgroundColor: '#f31c4d',
       dateStringColor: '#FFFFFF',
-      tagItems: [{
-        tag: TAGS.INTERNSHIP,
-        tooltipComment: '4-month, May to Aug',
-      }, {
-        tag: TAGS.PARTTIME,
-        tooltipComment: 'During school, Sep to Jan',
-      }],
+      tagItems: [
+        {
+          tag: TAGS.INTERNSHIP,
+          tooltipComment: '4-month, May to Aug',
+        }, {
+          tag: TAGS.PARTTIME,
+          tooltipComment: 'During school, Sep to Jan',
+        },
+      ],
     }, {
       dateString: 'May 2020',
       title: 'Student',
@@ -58,9 +64,11 @@ const TIMELINE_INFO: TimelineProps = {
       ],
       dateStringBackgroundColor: '#800000',
       dateStringColor: '#FFD700',
-      tagItems: [{
-        tag: TAGS.SCHOOL,
-      }],
+      tagItems: [
+        {
+          tag: TAGS.SCHOOL,
+        },
+      ],
     }, {
       dateString: 'Jun 2020 - Sep 2020',
       title: 'SDE Intern',
@@ -70,20 +78,24 @@ const TIMELINE_INFO: TimelineProps = {
       ],
       dateStringBackgroundColor: '#232F3E',
       dateStringColor: '#FF9900',
-      tagItems: [{
-        tag: TAGS.INTERNSHIP,
-        tooltipComment: '4-month remote',
-      }],
+      tagItems: [
+        {
+          tag: TAGS.INTERNSHIP,
+          tooltipComment: '4-month remote',
+        },
+      ],
     }, {
       dateString: 'Feb 2021',
       title: 'SDE',
       institution: 'Amazon Web Services (AWS)',
       dateStringBackgroundColor: '#232F3E',
       dateStringColor: '#FF9900',
-      tagItems: [{
-        tag: TAGS.FULLTIME,
-        tooltipComment: 'Vancouver, BC',
-      }],
+      tagItems: [
+        {
+          tag: TAGS.FULLTIME,
+          tooltipComment: 'Vancouver, BC',
+        },
+      ],
     },
   ],
 };
