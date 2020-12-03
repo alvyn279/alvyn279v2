@@ -160,6 +160,7 @@ export const ABOUT_INFO: AboutProps = {
         'react-router',
         'Webpack',
         'axios',
+        'Hooks/Effects',
       ],
     }, {
       type: 'Cloud',
