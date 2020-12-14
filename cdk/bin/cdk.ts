@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import cdk = require('@aws-cdk/core');
+import * as cdk from '@aws-cdk/core';
 import { PersonalWebsiteStack } from '../lib/personal-website-stack';
 import { ScaffoldStack } from '../lib/scaffold-stack';
 

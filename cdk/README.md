@@ -8,16 +8,20 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
 ### Pre-reqs
 
-1. Deploy Toolkit Stack for AWS account
+1. Set up CDK constants by changing constants used by the CDK app (AWS account ID, domain name) in `cdk/constants.ts`.
+
+
+2. Deploy Toolkit Stack for AWS account.
 
 Example error:
 ```
  ❌  S3ReactPersonalWebsite failed: Error: This stack uses assets, so the toolkit stack must be deployed to the environment (Run "cdk bootstrap aws://459641237997/us-east-1")
 ```
-2. Deploy `ScaffoldStack` to init required AWS resources with the following command:
-```
+
+3. Deploy `ScaffoldStack` to init required AWS resources with the following command:
+`
 npm run cdk deploy ScaffoldStack
-```
+`
 
 ### Modifying website
 
@@ -45,9 +49,12 @@ The CDK application will generate an IAM User with least-privileged access to th
         `AWS_ACCESS_KEY_ID`
         `AWS_SECRET_ACCESS_KEY`
 
-### Change CDK constants
+## AWS Billing Alarms
 
-Change constants used by the CDK app (AWS account ID, domain name) in `cdk/constants.ts`.
+### Pre-reqs
+
+Enable billing alerts as [per documentation steps](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html#turning_on_billing_metrics).
+
 
 ## Useful commands
 

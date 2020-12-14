@@ -1,5 +1,5 @@
-import cdk = require('@aws-cdk/core');
-import iam = require('@aws-cdk/aws-iam');
+import * as cdk from '@aws-cdk/core';
+import * as iam from '@aws-cdk/aws-iam';
 import { SPADeploy } from 'cdk-spa-deploy';
 
 import { CUSTOM_DOMAIN_NAME } from '../constants';
