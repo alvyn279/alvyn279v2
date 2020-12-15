@@ -37,7 +37,9 @@ export class ScaffoldStack extends cdk.Stack {
         topicName: 'WebsiteBillingAlarmNotificationTopic',
       });
 
-      billingAlarmTopic.addSubscription(new sub.EmailSubscription(props.billing.adminEmail));
+      billingAlarmTopic.addSubscription(new sub.EmailSubscription(props.billing.adminEmail, {
+        json: true,
+      }));
 
       const billingAlarmMetric: cw.Metric = new cw.Metric({
         label: 'charges',
