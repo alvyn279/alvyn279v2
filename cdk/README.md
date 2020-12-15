@@ -51,9 +51,15 @@ The CDK application will generate an IAM User with least-privileged access to th
 
 ## AWS Billing Alarms
 
+The Scaffold stack exposes an API to enable billing alarms. You will be emailed when your estimated charges exceed a certain amount.
+
 ### Pre-reqs
 
 Enable billing alerts as [per documentation steps](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html#turning_on_billing_metrics).
+
+### Enable billing alarms
+
+You can implement the `billing` attribute of `ScaffoldStackProps` to create this alarm.
 
 
 ## Useful commands
