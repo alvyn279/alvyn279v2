@@ -1,8 +1,8 @@
 import * as cdk from '@aws-cdk/core';
-import * as sns from '@aws-cdk/aws-sns';
-import * as sub from '@aws-cdk/aws-sns-subscriptions';
 import * as cw from '@aws-cdk/aws-cloudwatch';
 import * as cwa from '@aws-cdk/aws-cloudwatch-actions';
+import * as sns from '@aws-cdk/aws-sns';
+import * as sub from '@aws-cdk/aws-sns-subscriptions';
 import * as route53 from '@aws-cdk/aws-route53';
 
 import { PersonalWebsiteStack } from './personal-website-stack'; // eslint-disable-line no-unused-vars
