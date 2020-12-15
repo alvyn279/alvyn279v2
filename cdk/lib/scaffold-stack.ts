@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import * as cdk from '@aws-cdk/core';
 import * as sns from '@aws-cdk/aws-sns';
 import * as sub from '@aws-cdk/aws-sns-subscriptions';
@@ -44,7 +43,7 @@ export class ScaffoldStack extends cdk.Stack {
         label: 'charges',
         metricName: 'EstimatedCharges',
         namespace: 'AWS/Billing',
-      }).with({ // Evaluates the metric every (period) minutes
+      }).with({ // Evaluates the metric every [props.period] minutes
         period: cdk.Duration.minutes(20),
       });
 

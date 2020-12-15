@@ -2,14 +2,16 @@ import * as cdk from '@aws-cdk/core';
 import * as iam from '@aws-cdk/aws-iam';
 import { SPADeploy } from 'cdk-spa-deploy';
 
-import { CUSTOM_DOMAIN_NAME } from '../constants';
+export interface PersonalWebsiteStackProps extends cdk.StackProps {
+  domainName: string,
+}
 
 /**
  * CloudFormation stack of AWS resources that will distribute the
  * React/S3 website.
  */
 export class PersonalWebsiteStack extends cdk.Stack {
-  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+  constructor(scope: cdk.App, id: string, props: PersonalWebsiteStackProps) {
     super(scope, id, props);
 
     // Create deploy construct
@@ -17,7 +19,7 @@ export class PersonalWebsiteStack extends cdk.Stack {
       encryptBucket: true,
     })
       .createSiteFromHostedZone({
-        zoneName: CUSTOM_DOMAIN_NAME,
+        zoneName: props.domainName,
         indexDoc: 'index.html',
         websiteFolder: '../website/build',
       });

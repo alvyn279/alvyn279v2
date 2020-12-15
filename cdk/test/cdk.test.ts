@@ -13,6 +13,7 @@ test('Personal Website Stack setup', () => {
       account: AWS_ACCOUNT,
       region: 'us-east-1',
     },
+    domainName: 'test.com',
   });
 
   // THEN
