@@ -10,7 +10,7 @@ const TIMELINE_INFO: TimelineProps = {
       institution: 'Concordia University',
       description: [
         'Started Bachelor\'s of Software Engineering (BEng).',
-        'Enrolled in co-op.',
+        'Enrolled in Co-op.',
       ],
       dateStringBackgroundColor: '#800000',
       dateStringColor: '#FFD700',
