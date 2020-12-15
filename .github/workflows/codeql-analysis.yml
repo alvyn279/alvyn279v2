@@ -1,4 +1,4 @@
-name: CodeQL static analysis
+name: codeql-analysis
 
 on:
   push:
