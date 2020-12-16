@@ -1,9 +1,6 @@
 import * as cdk from '@aws-cdk/core';
-import * as cw from '@aws-cdk/aws-cloudwatch';
-import * as cwa from '@aws-cdk/aws-cloudwatch-actions';
-import * as sns from '@aws-cdk/aws-sns';
-import * as sub from '@aws-cdk/aws-sns-subscriptions';
 import * as route53 from '@aws-cdk/aws-route53';
+import { BillingAlarm } from 'aws-cdk-billing-alarm';
 
 import { PersonalWebsiteStack } from './personal-website-stack'; // eslint-disable-line no-unused-vars
 
@@ -33,38 +30,10 @@ export class ScaffoldStack extends cdk.Stack {
 
     if (props.billing) {
       // Set up billing alarm
-      const billingAlarmTopic: sns.ITopic = new sns.Topic(this, 'WebsiteBillingAlarmNotificationTopic', {
-        topicName: 'WebsiteBillingAlarmNotificationTopic',
+      new BillingAlarm(this, 'AWSAccountBillingAlarm', {
+        monthlyThreshold: props.billing.monthlyThreshold,
+        email: props.billing.adminEmail,
       });
-
-      billingAlarmTopic.addSubscription(new sub.EmailSubscription(props.billing.adminEmail, {
-        json: true,
-      }));
-
-      const billingAlarmMetric: cw.Metric = new cw.Metric({
-        label: 'charges',
-        metricName: 'EstimatedCharges',
-        namespace: 'AWS/Billing',
-        statistic: 'Maximum',
-        dimensions:
-          {
-            Currency: 'USD',
-          },
-      }).with({ // Evaluates the metric every [props.period] minutes
-        period: cdk.Duration.hours(9),
-      });
-
-      const billingAlarm: cw.Alarm = new cw.Alarm(this, 'WebsiteBillingAlarm', {
-        alarmDescription: 'Maximal monthly billing cost alarm.',
-        comparisonOperator: cw.ComparisonOperator.GREATER_THAN_OR_EQUAL_TO_THRESHOLD,
-        evaluationPeriods: 1,
-        metric: billingAlarmMetric,
-        threshold: props.billing.monthlyThreshold,
-      });
-
-      const alarmAction: cwa.SnsAction = new cwa.SnsAction(billingAlarmTopic);
-
-      billingAlarm.addAlarmAction(alarmAction);
     }
   }
 }
