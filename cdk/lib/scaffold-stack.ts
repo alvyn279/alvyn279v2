@@ -45,8 +45,13 @@ export class ScaffoldStack extends cdk.Stack {
         label: 'charges',
         metricName: 'EstimatedCharges',
         namespace: 'AWS/Billing',
+        statistic: 'Maximum',
+        dimensions:
+          {
+            Currency: 'USD',
+          },
       }).with({ // Evaluates the metric every [props.period] minutes
-        period: cdk.Duration.minutes(20),
+        period: cdk.Duration.hours(9),
       });
 
       const billingAlarm: cw.Alarm = new cw.Alarm(this, 'WebsiteBillingAlarm', {
