@@ -32,7 +32,7 @@ export class ScaffoldStack extends cdk.Stack {
       // Set up billing alarm
       new BillingAlarm(this, 'AWSAccountBillingAlarm', {
         monthlyThreshold: props.billing.monthlyThreshold,
-        email: props.billing.adminEmail,
+        emails: [props.billing.adminEmail],
       });
     }
   }
