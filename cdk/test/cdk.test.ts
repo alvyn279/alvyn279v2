@@ -1,4 +1,4 @@
-import { expect as expectCDK, haveResource, haveResourceLike } from '@aws-cdk/assert';
+import {expect as expectCDK, haveResource, haveResourceLike} from '@aws-cdk/assert';
 import * as cdk from '@aws-cdk/core';
 import { PersonalWebsiteStack } from '../lib/personal-website-stack';
 import { AWS_ACCOUNT } from '../constants';
@@ -8,9 +8,9 @@ test('Personal Website Stack setup', () => {
   const app = new cdk.App();
 
   // WHEN
-  const stack = new PersonalWebsiteStack(app, 'CdkArticleStack', {
+  const stack = new PersonalWebsiteStack(app, 'S3WebsiteStack', {
     env: {
-      account: AWS_ACCOUNT,
+      account: 'random',
       region: 'us-east-1',
     },
     domainName: 'test.com',
@@ -18,6 +18,15 @@ test('Personal Website Stack setup', () => {
 
   // THEN
   expectCDK(stack).to(haveResource('AWS::S3::Bucket', {
+    BucketEncryption: {
+      ServerSideEncryptionConfiguration: [
+        {
+          ServerSideEncryptionByDefault: {
+            SSEAlgorithm: 'AES256',
+          },
+        },
+      ],
+    },
     WebsiteConfiguration: {
       IndexDocument: 'index.html',
     },
