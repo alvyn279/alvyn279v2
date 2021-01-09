@@ -151,6 +151,7 @@ export const ABOUT_INFO: AboutProps = {
       content: [
         'Lombok',
         'Dagger',
+        'Guice',
       ],
     }, {
       type: 'React',
@@ -166,6 +167,7 @@ export const ABOUT_INFO: AboutProps = {
       type: 'Cloud',
       content: [
         'aws-cdk',
+        'AWS EC2, CloudWatch, DynamoDB, Lambda, S3, API Gateway, ECS, CloudFormation, Route53, SNS',
       ],
     }, {
       type: 'Python',
@@ -185,6 +187,18 @@ export const ABOUT_INFO: AboutProps = {
         'eslint',
         'airbnb/javascript',
         'pylint',
+      ],
+    }, {
+      type: 'Logger',
+      content: [
+        'Sl4j',
+      ],
+    }, {
+      type: 'CI/CD',
+      content: [
+        'Docker',
+        'Docker Compose',
+        'GitHub Actions',
       ],
     },
   ],
