@@ -1,8 +1,6 @@
 # S3 React Typescript CDK Application
 
-This is a project for TypeScript development with CDK.
-
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+This project uses CDK to set up AWS infrastructure programatically.
 
 ## Manual deployment guide
 
@@ -38,16 +36,26 @@ Automatic deployments to S3 bucket when a push is made to `main`.
 
 ### Pre-reqs
 
-You must first deploy the CloudFormation stacks (scaffold and website in that order) once with an admin AWS user. 
+**You must first deploy the CloudFormation stacks (scaffold and website in that order) once with an admin AWS user**. 
 I use environment variables and AWS profiles for credentials resolution.
 
-The CDK application will generate an IAM User with least-privileged access to the necessary AWS deployment resources.
+The CDK application will generate an [IAM User with least-privileged access](#design-of-least-privileged-user) to the necessary AWS deployment resources.
 
-1. You can generate access/private key pair for that user on AWS console
+
+1. You can generate access/private key pair for this user on AWS console
 2. Add these as `secrets` in the GitHub repo settings under
 
         `AWS_ACCESS_KEY_ID`
         `AWS_SECRET_ACCESS_KEY`
+
+## Design of least privileged user
+
+The `GitHubActionsDeployer` IAM user should have all the necessary permissions to deploy the application from scratch (and update it).
+
+After an initial deploy with an admin account, AWS CloudTrail was used to retrieve all the actions necessary during `cdk deploy`. There is almost a one-to-one mapping between resource actions and the events recorded on CloudTrail.
+
+If ever an access is denied, just add the missing permission to the `GitHubActionsDeployer`'s policy statement in `lib/personal-website-stack.ts`.
+
 
 ## AWS Billing Alarm
 
@@ -55,9 +63,7 @@ The Scaffold stack exposes an API to enable billing alarms. You will be emailed 
 
 ### Pre-reqs
 
-**Note**: Do not proceed with 'Creating a billing alarm' with the Console. The Scaffold stack will take care of that for you. 
-
-Enable billing alerts (and only that) as [per documentation steps](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html#turning_on_billing_metrics).
+Follow pre-req instructions at [aws-cdk-billing-alarm](https://github.com/alvyn279/aws-cdk-billing-alarm)
 
 ### Creating billing alarm
 
