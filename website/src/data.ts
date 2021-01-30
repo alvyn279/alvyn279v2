@@ -168,6 +168,7 @@ export const ABOUT_INFO: AboutProps = {
       content: [
         'aws-cdk',
         'AWS EC2, CloudWatch, DynamoDB, Lambda, S3, API Gateway, ECS, CloudFormation, Route53, SNS',
+        'AWS Java SDK',
       ],
     }, {
       type: 'Python',
