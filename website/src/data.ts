@@ -162,6 +162,9 @@ export const ABOUT_INFO: AboutProps = {
         'Webpack',
         'axios',
         'Hooks/Effects',
+        'redux-saga',
+        'Storybook',
+        'reselect',
       ],
     }, {
       type: 'Cloud',
