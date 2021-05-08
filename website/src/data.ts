@@ -74,7 +74,7 @@ const TIMELINE_INFO: TimelineProps = {
       title: 'SDE Intern',
       institution: 'Amazon Web Services (AWS)',
       description: [
-        'AWS Cost Categories team',
+        'AWS Cost Categories',
         'Built a native AWS serverless web application.',
       ],
       dateStringBackgroundColor: '#232F3E',
@@ -91,7 +91,7 @@ const TIMELINE_INFO: TimelineProps = {
       institution: 'Amazon Web Services (AWS)',
       dateStringBackgroundColor: '#232F3E',
       dateStringColor: '#FF9900',
-      description: ['AWS Cost Categories Team'],
+      description: ['AWS Cost Categories'],
       tagItems: [
         {
           tag: TAGS.FULLTIME,
