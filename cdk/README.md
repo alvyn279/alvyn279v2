@@ -6,7 +6,7 @@ This project uses CDK to set up AWS infrastructure programatically.
 
 ### Pre-reqs
 
-1. Set up CDK constants by changing constants used by the CDK app (AWS account ID, domain name) in `cdk/constants.ts`.
+1. Set up CDK constants by changing constants used by the CDK app (AWS account ID, domain name, whether you want a development environment) in `cdk/constants.ts`.
 
 
 2. Deploy Toolkit Stack for AWS account.
@@ -16,7 +16,7 @@ Example error:
  ❌  S3ReactPersonalWebsite failed: Error: This stack uses assets, so the toolkit stack must be deployed to the environment (Run "cdk bootstrap aws://459641237997/us-east-1")
 ```
 
-3. Deploy `ScaffoldStack` to init required AWS resources with the following command:
+3. Deploy `ScaffoldStack` to init required AWS resources for the website with the following command:
 `
 npm run cdk deploy ScaffoldStack
 `
@@ -30,6 +30,16 @@ npm run cdk deploy ScaffoldStack
 npm run cdk deploy S3ReactPersonalWebsite
 ```
 
+## Test the website using a developement environment
+
+After the `ScaffoldStack` is deployed, change to `GithubActionsDeployer` credentials and run the following command.
+
+```
+npm run cdk deploy S3ReactPersonalWebsiteDev
+```
+
+Your development website should be deployed at the subdomain you specified in the construc props.
+
 ## GitHub Actions Deployment
 
 Automatic deployments to S3 bucket when a push is made to `main`.
@@ -39,7 +49,7 @@ Automatic deployments to S3 bucket when a push is made to `main`.
 **You must first deploy the CloudFormation stacks (scaffold and website in that order) once with an admin AWS user**. 
 I use environment variables and AWS profiles for credentials resolution.
 
-The CDK application will generate an [IAM User with least-privileged access](#design-of-least-privileged-user) to the necessary AWS deployment resources.
+The CDK application scaffold stack will generate an [IAM User with least-privileged access](#design-of-least-privileged-user) to the necessary AWS deployment resources.
 
 
 1. You can generate access/private key pair for this user on AWS console
@@ -54,7 +64,7 @@ The `GitHubActionsDeployer` IAM user should have all the necessary permissions t
 
 After an initial deploy with an admin account, AWS CloudTrail was used to retrieve all the actions necessary during `cdk deploy`. There is almost a one-to-one mapping between resource actions and the events recorded on CloudTrail.
 
-If ever an access is denied, just add the missing permission to the `GitHubActionsDeployer`'s policy statement in `lib/personal-website-stack.ts`.
+If ever an access is denied, just add the missing permission to the `GitHubActionsDeployer`'s policy statement in `bin/cdk.ts`.
 
 
 ## AWS Billing Alarm

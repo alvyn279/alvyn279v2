@@ -1,4 +1,5 @@
 import * as cdk from '@aws-cdk/core';
+import * as iam from '@aws-cdk/aws-iam';
 import * as route53 from '@aws-cdk/aws-route53';
 import { BillingAlarm } from 'aws-cdk-billing-alarm';
 
@@ -35,5 +36,47 @@ export class ScaffoldStack extends cdk.Stack {
         emails: [props.billing.adminEmail],
       });
     }
+
+    const githubActionsDeployer: iam.IUser = new iam.User(this, 'GitHubActionsDeployer', {
+      userName: 'GitHubActionsDeployer',
+    });
+
+    const deployPolicyStatement: iam.PolicyStatement = new iam.PolicyStatement({
+      actions: [
+        's3:GetObject*',
+        's3:GetBucket*',
+        's3:List*',
+        's3:DeleteObject*',
+        's3:PutObject*',
+        's3:Abort*',
+        's3:PutPublicAccessBlock',
+        's3:PutBucket*',
+        's3:CreateBucket',
+        'cloudfront:CreateDistributionWithTags',
+        'cloudfront:GetInvalidation',
+        'cloudfront:CreateInvalidation',
+        'acm:RequestCertificate',
+        'acm:DescribeCertificate',
+        'acm:DeleteCertificate',
+        'route53:GetChange',
+        'route53:ChangeResourceRecordSets',
+        'route53:Update*',
+        'sts:AssumeRole',
+        'cloudformation:*',
+        'lambda:*',
+        'iam:AttachRolePolicy',
+        'iam:CreateRole',
+        'iam:GetRole',
+        'iam:PutUserPolicy',
+        'iam:PutRolePolicy',
+        'kms:CreateGrant',
+        'logs:CreateLog*',
+      ],
+      effect: iam.Effect.ALLOW,
+      resources: ['*'],
+    });
+
+    // Allow GitHub Actions to deploy website to bucket
+    githubActionsDeployer.addToPrincipalPolicy(deployPolicyStatement);
   }
 }
