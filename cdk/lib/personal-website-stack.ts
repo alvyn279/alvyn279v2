@@ -11,7 +11,7 @@ export interface PersonalWebsiteStackProps extends cdk.StackProps {
  * React/S3 website.
  */
 export class PersonalWebsiteStack extends cdk.Stack {
-  constructor(scope: cdk.App, id: string, props: PersonalWebsiteStackProps) {
+  constructor(scope: cdk.Construct, id: string, props: PersonalWebsiteStackProps) {
     super(scope, id, props);
 
     // Create deploy construct
