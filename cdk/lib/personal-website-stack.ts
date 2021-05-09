@@ -14,7 +14,7 @@ export class PersonalWebsiteStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props: PersonalWebsiteStackProps) {
     super(scope, id, props);
 
-    // Create sinlge page app construct
+    // Create single page app construct
     new SPADeploy(this, 'PersonalWebsiteDeploy', {
       encryptBucket: true,
     })
