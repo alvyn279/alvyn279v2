@@ -36,6 +36,9 @@ After the `ScaffoldStack` is deployed, change to `GithubActionsDeployer` credent
 
 ```
 npm run cdk deploy S3ReactPersonalWebsiteDev
+
+# to destroy the stack, use this or manually delete from CloudFormation console
+npm run cdk destroy S3ReactPersonalWebsiteDev
 ```
 
 Your development website should be deployed at the subdomain you specified in the construc props.
@@ -47,7 +50,7 @@ Automatic deployments to S3 bucket when a push is made to `main`.
 ### Pre-reqs
 
 **You must first deploy the CloudFormation stacks (scaffold and website in that order) once with an admin AWS user**. 
-I use environment variables and AWS profiles for credentials resolution.
+I use environment variables and AWS profiles for credentials resolution. Read up on credentials precedence.
 
 The CDK application scaffold stack will generate an [IAM User with least-privileged access](#design-of-least-privileged-user) to the necessary AWS deployment resources.
 
