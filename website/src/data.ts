@@ -91,7 +91,10 @@ const TIMELINE_INFO: TimelineProps = {
       institution: 'Amazon Web Services (AWS)',
       dateStringBackgroundColor: '#232F3E',
       dateStringColor: '#FF9900',
-      description: ['AWS Cost Categories'],
+      description: [
+        'AWS Cost Categories',
+        'AWS Billing Console'
+      ],
       tagItems: [
         {
           tag: TAGS.FULLTIME,
