@@ -93,7 +93,7 @@ const TIMELINE_INFO: TimelineProps = {
       dateStringColor: '#FF9900',
       description: [
         'AWS Cost Categories',
-        'AWS Billing Console'
+        'AWS Billing Console',
       ],
       tagItems: [
         {
@@ -175,8 +175,9 @@ export const ABOUT_INFO: AboutProps = {
       type: 'Cloud',
       content: [
         'aws-cdk',
-        'AWS EC2, CloudWatch, DynamoDB, Lambda, S3, API Gateway, ECS, CloudFormation, Route53, SNS',
+        'AWS EC2, CloudWatch, DynamoDB, Lambda, S3, API Gateway, ECS, CloudFormation, Route53, SNS, KMS',
         'AWS Java SDK',
+        'AWS Java Encryption SDK',
       ],
     }, {
       type: 'Python',
