@@ -15,7 +15,9 @@ import 'antd/dist/antd.css';
 // JS
 import 'jquery';
 import 'bootstrap';
-import './libs/easing.min';
+import smoothscroll from 'smoothscroll-polyfill';
+// Kick off the polyfill!
+smoothscroll.polyfill();
 
 export const MAIN_THEME_COLOR = '#0078ff';
 export const LIGHTER_MAIN_THEME_COLOR = '#7d97bd';

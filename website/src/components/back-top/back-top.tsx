@@ -1,45 +1,42 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import $ from 'jquery';
 import './back-top.scss';
 
-interface BackTopState {
-  show: boolean
-}
+const BackToTop = () => {
+    const [show, setShow] = useState<boolean>(false);
 
-class BackToTop extends React.Component<any, BackTopState> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      show: false,
+    const setConditionalShow = () => {
+        setShow(window.pageYOffset >= 100);
     };
-  }
 
-  componentDidMount() {
-    $('.back-to-top').click(() => {
-      $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
-      return false;
-    });
-    window.addEventListener('scroll', () => {
-      this.setState({ show: window.pageYOffset >= 100 });
-    });
-  }
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
 
-  render() {
-    const { show } = this.state;
+    useEffect(() => {
+        window.addEventListener('scroll', setConditionalShow);
+
+        return () => window.removeEventListener('scroll', setConditionalShow);
+    });
 
     return (
-      <span
-        className={`back-to-top ${show ? 'fadeInBackTopButton' : 'fadeOutBackTopButton'}`}
-        style={{
-          display: 'block',
-          width: '44px',
-          height: '44px',
-        }}
-      >
-        <i className={'fa fa-chevron-up'} />
-      </span>
+        <span
+            className={`back-to-top ${
+                show ? 'fadeInBackTopButton' : 'fadeOutBackTopButton'
+            }`}
+            onClick={scrollToTop}
+            style={{
+                display: 'block',
+                width: '44px',
+                height: '44px',
+            }}
+        >
+            <i className={'fa fa-chevron-up'} />
+        </span>
     );
-  }
-}
+};
 
 export default BackToTop;
