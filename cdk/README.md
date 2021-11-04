@@ -18,7 +18,7 @@ Example error:
 
 3. Deploy `ScaffoldStack` to init required AWS resources for the website with the following command:
 `
-npm run cdk deploy ScaffoldStack
+yarn run cdk deploy ScaffoldStack
 `
 
 ### Modifying website
@@ -27,7 +27,7 @@ npm run cdk deploy ScaffoldStack
 2. Run build from root directory for `cdk` and `website`
 3. Run:
 ```
-npm run cdk deploy S3ReactPersonalWebsite
+yarn run cdk deploy S3ReactPersonalWebsite
 ```
 
 ## Test the website using a developement environment
@@ -35,10 +35,10 @@ npm run cdk deploy S3ReactPersonalWebsite
 After the `ScaffoldStack` is deployed, change to `GithubActionsDeployer` credentials and run the following command.
 
 ```
-npm run cdk deploy S3ReactPersonalWebsiteDev
+yarn run cdk deploy S3ReactPersonalWebsiteDev
 
 # to destroy the stack, use this or manually delete from CloudFormation console
-npm run cdk destroy S3ReactPersonalWebsiteDev
+yarn run cdk destroy S3ReactPersonalWebsiteDev
 ```
 
 Your development website should be deployed at the subdomain you specified in the construc props.

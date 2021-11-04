@@ -4,9 +4,9 @@
   "description": "This follows a pattern to deploy a react website",
   "scripts": {
     "buildwebsite": "cd website && yarn && yarn build && cd ../",
-    "buildcdk": "cd cdk && npm i && npm run build && cd ../",
+    "buildcdk": "cd cdk && yarn && yarn run build && cd ../",
     "build": "yarn run buildwebsite && yarn run buildcdk",
-    "deploy": "cd cdk && npm run deploy"
+    "deploy": "cd cdk && yarn run deploy"
   },
   "author": "",
   "license": "ISC"
