@@ -5,20 +5,20 @@ import SectionHeader from '../section-header/section-header';
 import SkillsCard from '../skills-card/skills-card';
 
 export interface Skill {
-  id: string,
-  content: string,
-  value: number,
+    id: string;
+    content: string;
+    value: number;
 }
 
 export interface LibraryGroup {
-  type: string,
-  content: Array<string>
+    type: string;
+    content: Array<string>;
 }
 
 export interface AboutProps {
-  skills: Array<Skill>,
-  libraries: Array<LibraryGroup>,
-  timeline: TimelineProps
+    skills: Array<Skill>;
+    libraries: Array<LibraryGroup>;
+    timeline: TimelineProps;
 }
 
 export const About = (props: AboutProps) => {
@@ -33,9 +33,7 @@ export const About = (props: AboutProps) => {
           header={'Timeline'}
           subtitle={'Academic and professional career experiences'}
         />
-        <Timeline
-          events={timeline.events}
-        />
+        <Timeline events={timeline.events} />
       </div>
       <div className={'container'}>
         <SectionHeader
@@ -49,6 +47,6 @@ export const About = (props: AboutProps) => {
       </div>
     </section>
   );
-}
+};
 
 export default About;

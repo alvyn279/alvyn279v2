@@ -1,11 +1,11 @@
 import React from 'react';
 import './porfolio.scss';
 import { Button } from 'antd';
-import LogoGithub from 'react-ionicons/lib/LogoGithub';
+import { LogoGithub } from 'react-ionicons';
 import SectionHeader from '../section-header/section-header';
 
 interface PortfolioProps {
-  githubLink: string
+    githubLink: string;
 }
 
 export const Portfolio = (props: PortfolioProps) => {
@@ -29,16 +29,17 @@ export const Portfolio = (props: PortfolioProps) => {
               shape={'round'}
               href={githubLink}
               icon={(
-                <LogoGithub
-                  className={'githubIcon'}
-                  fontSize={'30px'}
-                />
+                <span className={'githubIcon'}>
+                  <LogoGithub height={'30px'} />
+                </span>
               )}
               size={'middle'}
             >
-            Github
+              Github
             </Button>
-            <span>&nbsp;, that&apos;s what it&apos;s made for. &nbsp;</span>
+            <span>
+              &nbsp;, that&apos;s what it&apos;s made for. &nbsp;
+            </span>
             <span
               role={'img'}
               aria-labelledby={'winky face'}

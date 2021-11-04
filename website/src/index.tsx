@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import smoothscroll from 'smoothscroll-polyfill';
 import App from './App';
 import * as serviceWorker from './utils/serviceWorker';
 
@@ -15,7 +16,6 @@ import 'antd/dist/antd.css';
 // JS
 import 'jquery';
 import 'bootstrap';
-import smoothscroll from 'smoothscroll-polyfill';
 // Kick off the polyfill!
 smoothscroll.polyfill();
 

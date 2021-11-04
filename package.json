@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "This follows a pattern to deploy a react website",
   "scripts": {
-    "buildwebsite": "cd website && npm i && npm run build && cd ../",
+    "buildwebsite": "cd website && yarn && yarn build && cd ../",
     "buildcdk": "cd cdk && npm i && npm run build && cd ../",
-    "build": "npm run buildwebsite && npm run buildcdk",
+    "build": "yarn run buildwebsite && yarn run buildcdk",
     "deploy": "cd cdk && npm run deploy"
   },
   "author": "",

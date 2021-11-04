@@ -34,6 +34,8 @@
         "tsx": "never"
       }
     ],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
     "no-unused-vars": ["error", { "vars": "all", "args": "none"}],
     "no-unused-expressions": "off",
     "no-loop-func": "off",
@@ -46,13 +48,16 @@
     "react/jsx-indent-props" : ["error", 2],
     "react/jsx-curly-brace-presence": ["error", { "props": "always", "children": "ignore"}],
     "react/jsx-props-no-spreading": "off",
+    "react/require-default-props": "off",
     "react/no-array-index-key": "off",
     "react/static-property-placement": "off",
     "react/prefer-stateless-function": "off",
     "jsx-a11y/anchor-is-valid": "off",
-    "jsx-a11y/control-has-associated-label": "off"
+    "jsx-a11y/control-has-associated-label": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off"
   },
-  "plugins": ["react"],
+  "plugins": ["react", "@typescript-eslint"],
   "settings": {
     "import/resolver": {
       "node": {

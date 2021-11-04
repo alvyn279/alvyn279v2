@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Timeline as VerticalTimeline,
   TimelineItem as VerticalTimelineItem,
+  // @ts-ignore
 } from 'vertical-timeline-component-for-react';
 import { Tag, Tooltip } from 'antd';
 import { TagItem } from '../../utils/tags';
@@ -10,7 +11,7 @@ import { FONT_COLOR_DEFAULT, MAIN_THEME_COLOR } from '../../index';
 import './timeline.scss';
 
 export interface TimelineProps {
-  events: Array<TimelineItem>
+  events: Array<TimelineItem>,
 }
 
 interface TimelineItem {
@@ -34,7 +35,7 @@ const timelineItemContainerStyle = {
 const Timeline = (props: TimelineProps) => {
   const { events } = props;
 
-  const renderTags = (tagItems: Array<TagItem>, timelineItemIndex) => {
+  const renderTags = (tagItems: Array<TagItem>, timelineItemIndex: number) => {
     return tagItems.map((tagItem: TagItem, tagIndex: number) => {
       const { tag, tooltipComment }: TagItem = tagItem;
       const tagId = `${timelineItemIndex}-${tagIndex}`;
